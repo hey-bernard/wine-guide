@@ -159,6 +159,20 @@
   .pips{display:inline-flex;gap:4px;vertical-align:-1px;margin-right:10px}
   .pips i{width:11px;height:11px;border:1px solid var(--wine);display:block}
   .pips i.on{background:var(--wine)}
+  .pips.sm i{width:8px;height:8px}
+  .pips.sm{gap:3px;margin-right:6px}
+
+  .pickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:14px 0 26px}
+  .pickgrid>div{background:var(--surface);padding:17px 18px}
+  .pick-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+  .pick-head h5{margin:0;font-family:var(--display);font-size:16.5px;font-weight:700;color:var(--ink)}
+  .pick-meta{font-family:var(--mono);font-size:11px;color:var(--ink-faint);white-space:nowrap}
+  .pick-score{display:inline-block;margin-left:8px;padding:1px 6px;border:1px solid var(--gold);color:var(--gold);font-family:var(--mono);font-size:10.5px}
+  .pick-desc{font-size:14px;line-height:1.62;color:var(--ink-soft);margin:0 0 10px}
+  .pick-axes{display:flex;flex-wrap:wrap;gap:6px 16px;border-top:1px solid var(--rule-soft);padding-top:9px}
+  .pick-ax{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:var(--ink-soft);white-space:nowrap}
+  .pick-ax b{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--ink-faint);text-transform:uppercase}
+  h4.pickcat{margin:30px 0 2px;font-family:var(--body);font-weight:600;font-size:16px;color:var(--wine)}
 
   .checklist{list-style:none;margin:26px 0;padding:0;max-width:68ch;counter-reset:ck}
   .checklist li{counter-increment:ck;position:relative;padding:0 0 18px 48px;border-bottom:1px solid var(--rule-soft);margin-bottom:18px}
@@ -1364,7 +1378,14 @@
   <section id="import">
     <span class="chno">부록 2</span>
     <h2 class="ch">요즘 한국에 들어오는 수입 와인</h2>
-    <p class="dek">2025년 한국 와인 수입은 금액은 줄고(약 4,343억 원, 전년 대비 −6.0%) 물량은 늘었습니다(약 5만 6,634톤, +8.8%). 그런데 2026년 상반기엔 흐름이 한 번 더 바뀌었습니다. 수입액이 전년 동기 대비 1.6% 늘며 3년 연속 이어지던 하락세를 멈추고 반등했고, 오히려 수입 물량은 5.6% 줄었습니다 — 저가 대량 수입에서 벗어나 검증된 품질을 찾는 소비가 늘면서 평균 수입 단가도 리터당 9.12달러까지 올랐습니다. <strong>많이 마시기보다 확실한 한 병을 고르는 ‘양보다 질’의 재편</strong>이 지금 업계가 읽는 분위기입니다. <small>(출처: 관세청 수출입무역통계 · 와인21닷컴 시장 분석 · 2026년 업계 동향 보도)</small></p>
+    <p class="dek">입문자가 알아 두면 좋은 최근 시장의 흐름과, 바로 집어 들 수 있는 가성비 추천까지 한 번에 정리했습니다.</p>
+
+    <h3>최근 국내 수입 와인 시장 핵심 현황</h3>
+    <div class="prose">
+      <p><strong>물량은 줄고 금액은 반등 — ‘양보다 질’의 시대.</strong> 2025년 한국 와인 수입은 금액이 줄고(약 4,343억 원, 전년 대비 −6.0%) 물량은 늘었습니다(약 5만 6,634톤, +8.8%) <small>(출처: 관세청 수출입무역통계)</small>. 그런데 2026년 상반기엔 흐름이 한 번 더 바뀌었습니다. 수입액이 전년 동기 대비 1.6% 증가하며 3년 연속 이어지던 하락세를 멈추고 반등한 반면, 수입 물량은 5.6% 감소했습니다. 저가 대량 수입에서 벗어나 검증된 품질의 와인을 찾는 소비가 늘면서 평균 수입 단가도 리터당 9.12달러로 상승했습니다 <small>(출처: 2026년 업계 동향 보도 종합)</small>.</p>
+      <p><strong>레드 비중 축소와 화이트 · 스파클링의 약진.</strong> 전체 시장의 절반가량을 차지하던 레드 와인 비중이 50% 초반대로 내려앉은 반면(와인21닷컴 2025년 분석 기준 50.87%), 화이트(약 27%, 26.82%)와 스파클링(약 20%, 20.46%)의 점유율이 크게 확대되었습니다. 특히 프랑스산 와인의 경우 스파클링 수입액이 레드 와인을 앞지를 정도로 인기가 높습니다 <small>(출처: 와인21닷컴 시장 분석)</small>.</p>
+      <p><strong>음용 문화의 다변화.</strong> 거창한 격식 대신 가벼운 식사, 피크닉, 혼술에 어울리는 상큼한 화이트 와인과 헬시 플레저(Healthy Pleasure) 트렌드를 반영한 무알코올 · 저도수 와인 수입이 꾸준히 늘고 있습니다 <small>(출처: 2026년 업계 동향 보도 종합)</small>.</p>
+    </div>
 
     <figure>
       <div class="figframe">
@@ -1384,7 +1405,7 @@
           <text class="svgm" x="16" y="138" font-size="11" fill="currentColor" opacity=".6">로제 · 주정강화 등 기타 약 1.9% — 2025년 수입액 기준</text>
         </svg>
       </div>
-      <figcaption>레드가 여전히 절반을 넘기지만, 2020년만 해도 20%가 되지 않았던 화이트 비중은 빠르게 늘었습니다. 특히 프랑스산 와인은 스파클링 수입액이 레드 와인을 앞지를 정도로 인기가 높습니다. 거창한 격식보다 가벼운 식사 · 피크닉 · 혼술에 어울리는 상큼한 화이트, 그리고 헬시 플레저 흐름을 반영한 무알코올 · 저도수 와인 수입이 함께 늘고 있는 것도 같은 맥락입니다.</figcaption>
+      <figcaption>2025년 수입액 기준 비중입니다. 레드가 여전히 절반을 넘기지만, 2020년만 해도 20%가 되지 않았던 화이트 비중은 빠르게 늘었습니다.</figcaption>
     </figure>
 
     <h3>소비자를 위한 수입 와인 5대 카테고리</h3>
@@ -1431,37 +1452,138 @@
     </div>
 
     <h3>입문자를 위한 카테고리별 가성비 추천</h3>
-    <p class="dek">대형마트 · 편의점(스마트오더 포함) · 동네 와인숍에서 1~2만 원대(일부 3만 원대 초반)로 쉽게 구할 수 있고, 호불호가 적은 대표 와인들입니다. 가격은 조사 시점 기준이며 매장 · 빈티지 · 환율에 따라 달라질 수 있습니다.</p>
-    <div class="terms">
+    <p class="dek">대형마트 · 편의점(스마트오더 포함) · 동네 와인숍에서 1~2만 원대(일부 3만 원대 초반)로 쉽게 구할 수 있고, 호불호가 적은 대표 와인들입니다. 맛의 밸런스는 2장의 다섯 축(바디감 · 탄산 · 당도 · 산도 · 탄닌) 기준이고, 평점은 세계 최대 와인 커뮤니티 Vivino의 5점 만점 평균입니다. 가격 · 평점 모두 조사 시점 기준이며 매장 · 빈티지 · 환율에 따라 달라질 수 있습니다.</p>
+
+    <h4 class="pickcat">① 레드 Red</h4>
+    <div class="pickgrid">
       <div>
-        <span class="tno">①</span>
-        <h4>레드 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Red</span></h4>
-        <p><strong>카시예로 델 디아블로 까베르네 소비뇽</strong>(칠레, 1만원대 후반) — 전 세계에서 가장 널리 사랑받는 입문용 레드의 교과서. 체리 · 자두의 진한 과실향과 은은한 오크 향이 균형을 이루고, 편의점 · 마트 어디서나 구할 수 있습니다.</p>
-        <p class="where"><b>한 병 더</b>마츠 엘 피카로(스페인, 2만원대) — 라벨의 청년 얼굴 그림으로 ‘청년 와인’이라 불리며, 거칠지 않은 떫은맛과 진한 과즙미가 한식 고기 요리와 잘 맞습니다</p>
+        <div class="pick-head"><h5>카시예로 델 디아블로 까베르네 소비뇽</h5></div>
+        <p class="pick-meta">칠레 · 1만원대 후반<span class="pick-score">Vivino 3.5</span></p>
+        <p class="pick-desc">전 세계에서 가장 널리 사랑받는 입문용 레드의 교과서. 체리 · 자두의 진한 과실향과 은은한 오크 향이 균형을 이루고, 편의점 · 마트 어디서나 구할 수 있습니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 3점"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+        </div>
       </div>
       <div>
-        <span class="tno">②</span>
-        <h4>화이트 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">White</span></h4>
-        <p><strong>생 클레어 소비뇽 블랑</strong>(뉴질랜드, 2만원대) — 최근 한국의 화이트 와인 열풍을 이끈 대표 주자. 자몽 · 패션프루트 · 풋사과의 상큼한 향이 뚜껑을 열자마자 터져 나와 입문자도 직관적으로 맛있다고 느끼기 좋습니다.</p>
-        <p class="where"><b>한 병 더</b>롱반 샤도네이(미국, 1만원대 후반~2만원대 초반) — 신맛이 부담스럽다면 이쪽. 잘 익은 사과 향 뒤로 버터 · 바닐라의 고소한 질감이 감돌아 크림 파스타 · 치킨과 좋습니다</p>
+        <div class="pick-head"><h5>마츠 엘 피카로</h5></div>
+        <p class="pick-meta">스페인 · 2만원대<span class="pick-score">Vivino 3.9</span></p>
+        <p class="pick-desc">라벨의 청년 얼굴 그림으로 ‘청년 와인’이라 불리며, 거칠지 않은 떫은맛과 진한 과즙미가 한식 고기 요리와 잘 맞습니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 3점"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="pickcat">② 화이트 White</h4>
+    <div class="pickgrid">
+      <div>
+        <div class="pick-head"><h5>생 클레어 소비뇽 블랑</h5></div>
+        <p class="pick-meta">뉴질랜드 · 2만원대<span class="pick-score">Vivino 3.9</span></p>
+        <p class="pick-desc">최근 한국의 화이트 와인 열풍을 이끈 대표 주자. 자몽 · 패션프루트 · 풋사과의 상큼한 향이 뚜껑을 열자마자 터져 나와 입문자도 직관적으로 맛있다고 느끼기 좋습니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 5점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+        </div>
       </div>
       <div>
-        <span class="tno">③</span>
-        <h4>스파클링 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Sparkling</span></h4>
-        <p><strong>페데리코 파테르니나 까바 브뤼</strong>(스페인, 1만원대 초반) — 샴페인과 같은 전통 방식으로 만들면서도 1만원대라는 가성비. 기포가 경쾌하고 깔끔해 피자 · 치킨 · 감자튀김과 부담 없이 곁들이기 좋습니다.</p>
-        <p class="where"><b>한 병 더</b>칸티 모스카토 다스티(이탈리아, 1만원대 초반) — 도수 약 5.5~6%로 낮고 청포도 · 복숭아의 달콤한 향과 부드러운 탄산. 술이 약하거나 디저트와 곁들일 때 실패가 없습니다</p>
+        <div class="pick-head"><h5>롱반 샤도네이</h5></div>
+        <p class="pick-meta">미국 · 1만원대 후반~2만원대 초반</p>
+        <p class="pick-desc">신맛이 강한 화이트가 부담스럽다면 이쪽입니다. 잘 익은 사과 향 뒤로 버터 · 바닐라의 고소하고 부드러운 질감이 감돌아 크림 파스타 · 치킨과 궁합이 좋습니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="pickcat">③ 스파클링 Sparkling</h4>
+    <div class="pickgrid">
+      <div>
+        <div class="pick-head"><h5>페데리코 파테르니나 까바 브뤼</h5></div>
+        <p class="pick-meta">스페인 · 1만원대 초반<span class="pick-score">Vivino 3.4</span></p>
+        <p class="pick-desc">샴페인과 같은 전통 방식으로 만들면서도 1만원대라는 가성비. 기포가 경쾌하고 깔끔해 피자 · 치킨 · 감자튀김과 부담 없이 곁들이기 좋습니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 5점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+        </div>
       </div>
       <div>
-        <span class="tno">④</span>
-        <h4>로제 · 오렌지 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Rosé &amp; Orange</span></h4>
-        <p><strong>베린저 화이트 진판델</strong>(미국, 1만원대 후반) — 영롱한 핑크빛에 딸기 · 수박 같은 달콤상큼한 향. 가벼운 브런치나 피크닉에서 로제로 입문하기 좋은 선택입니다.</p>
-        <p class="where"><b>알아두면 좋은 점</b>오렌지 와인은 아직 수입량이 적어 동네 와인숍이나 내추럴 와인 전문점에서 찾는 편이 빠릅니다</p>
+        <div class="pick-head"><h5>칸티 모스카토 다스티</h5></div>
+        <p class="pick-meta">이탈리아 · 1만원대 초반<span class="pick-score">Vivino 4.0</span></p>
+        <p class="pick-desc">도수 약 5.5~6%로 낮고 청포도 · 복숭아의 달콤한 향과 부드러운 탄산. 술이 약하거나 디저트와 곁들일 때 실패가 없습니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 5점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="pickcat">④ 로제 · 오렌지 Rosé &amp; Orange</h4>
+    <div class="pickgrid">
+      <div>
+        <div class="pick-head"><h5>베린저 화이트 진판델</h5></div>
+        <p class="pick-meta">미국 · 1만원대 후반<span class="pick-score">Vivino 3.6</span></p>
+        <p class="pick-desc">영롱한 핑크빛 색감에 딸기 · 수박 같은 달콤상큼한 과일향이 매력적이어서 가벼운 브런치나 피크닉에서 로제로 입문하기 좋은 선택입니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 3점"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+        </div>
       </div>
       <div>
-        <span class="tno">⑤</span>
-        <h4>주정강화 · 무알코올 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Fortified &amp; 0.0%</span></h4>
-        <p><strong>그라함 파인 토니 포트</strong>(포르투갈, 2만원대 후반) — 도수(19%)는 높지만 건포도 · 견과류 · 캐러멜의 진한 단맛. 작은 잔으로 홀짝이기 좋고, 개봉 후 냉장 보관하면 6장에서 본 것처럼 몇 주를 버팁니다.</p>
-        <p class="where"><b>한 병 더</b>피에르 제로 샤도네이(프랑스 무알코올, 1만원대 후반) — 알코올만 제거해 일반 와인의 산미와 풍미를 살렸습니다. 운전하거나 건강을 챙길 때도 와인 분위기를 낼 수 있습니다</p>
+        <div class="pick-head"><h5>오렌지 와인</h5></div>
+        <p class="pick-meta">수입량이 아직 적은 카테고리</p>
+        <p class="pick-desc">청포도를 껍질째 발효해 쌉쌀함과 복합미를 살린 호박빛 와인입니다. 대형마트보다는 동네 와인숍이나 내추럴 와인 전문점에서 찾는 편이 빠릅니다. 향신료가 강한 아시안 요리, 매콤한 한식과 잘 어울립니다.</p>
+      </div>
+    </div>
+
+    <h4 class="pickcat">⑤ 주정강화 · 무알코올 Fortified &amp; 0.0%</h4>
+    <div class="pickgrid">
+      <div>
+        <div class="pick-head"><h5>그라함 파인 토니 포트</h5></div>
+        <p class="pick-meta">포르투갈 · 2만원대 후반<span class="pick-score">Vivino 3.9</span></p>
+        <p class="pick-desc">도수(19%)는 높지만 건포도 · 견과류 · 캐러멜의 깊고 진한 단맛. 작은 잔으로 홀짝이기 좋고, 개봉 후 냉장 보관하면 6장에서 본 것처럼 몇 주를 버팁니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+        </div>
+      </div>
+      <div>
+        <div class="pick-head"><h5>피에르 제로 샤도네이</h5></div>
+        <p class="pick-meta">프랑스 · 무알코올 · 1만원대 후반<span class="pick-score">Vivino 3.5</span></p>
+        <p class="pick-desc">알코올만 제거해 일반 와인의 산미와 깔끔한 풍미를 잘 구현했습니다. 운전하거나 건강을 챙길 때도 와인 분위기를 낼 수 있습니다.</p>
+        <div class="pick-axes">
+          <span class="pick-ax"><b>바디</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄산</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>당도</b><span class="pips sm" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>산도</b><span class="pips sm" role="img" aria-label="5점 중 3점"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span>
+          <span class="pick-ax"><b>탄닌</b><span class="pips sm" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+        </div>
       </div>
     </div>
 
