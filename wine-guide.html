@@ -1,0 +1,1360 @@
+<title>와인의 세계로 떠나는 첫걸음</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+<style>
+  :root{
+    --ground:#F7F4F6;
+    --surface:#FFFFFF;
+    --ink:#1E1419;
+    --ink-soft:#5E4E57;
+    --ink-faint:#8B7C84;
+    --rule:#DFD4DA;
+    --rule-soft:#EBE3E7;
+    --wine:#7B1B3C;
+    --wine-tint:#F3E7EC;
+    --gold:#8A6B2F;
+    --gold-tint:#F4EEE1;
+    --green:#2E4A3C;
+    --green-tint:#E7EEE9;
+    --display:"Gowun Batang","Noto Serif KR",ui-serif,Georgia,serif;
+    --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#161114; --surface:#1E181C; --ink:#F1E9ED; --ink-soft:#BBABB3;
+      --ink-faint:#8D7C85; --rule:#3B2E35; --rule-soft:#2A2126;
+      --wine:#E2798F; --wine-tint:#2C1A22; --gold:#CBA75E; --gold-tint:#262016;
+      --green:#8FC0A2; --green-tint:#1B2620;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161114; --surface:#1E181C; --ink:#F1E9ED; --ink-soft:#BBABB3;
+    --ink-faint:#8D7C85; --rule:#3B2E35; --rule-soft:#2A2126;
+    --wine:#E2798F; --wine-tint:#2C1A22; --gold:#CBA75E; --gold-tint:#262016;
+    --green:#8FC0A2; --green-tint:#1B2620;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:var(--body);font-weight:300;font-size:17px;line-height:1.78;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+  .prose{max-width:66ch}
+  p{margin:0 0 1.1em}
+  a{color:var(--wine)}
+  strong{font-weight:600;color:var(--ink)}
+  .lede-em{color:var(--wine);font-weight:500}
+
+  header.masthead{padding-block:72px 0}
+  .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 20px}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,8vw,68px);line-height:1.06;letter-spacing:-.01em;margin:0 0 18px;text-wrap:balance}
+  .standfirst{font-size:19px;line-height:1.7;color:var(--ink-soft);max-width:52ch;margin:0 0 30px}
+  .huestrip{display:flex;height:9px;margin-bottom:10px}
+  .huestrip span{flex:1}
+  .huestrip-note{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);display:flex;justify-content:space-between;margin:0 0 44px}
+  .credit{font-size:15px;color:var(--ink-faint);margin:0 0 48px}
+
+  nav.toc{border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding-block:22px}
+  nav.toc h2{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);font-weight:400;margin:0 0 14px}
+  nav.toc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px 32px}
+  nav.toc li{font-size:16.5px}
+  nav.toc a{text-decoration:none;color:var(--ink);display:flex;gap:12px;padding-block:6px;border-bottom:1px solid var(--rule-soft)}
+  nav.toc a:hover{color:var(--wine)}
+  nav.toc .n{font-family:var(--mono);font-size:13.5px;color:var(--wine);padding-top:3px;flex:none}
+
+  section{padding-block:60px 10px;border-top:1px solid var(--rule-soft)}
+  section:first-of-type{border-top:0}
+  .chno{font-family:var(--mono);font-size:13px;letter-spacing:.2em;color:var(--wine);display:block;margin-bottom:10px}
+  h2.ch{font-family:var(--display);font-weight:700;font-size:clamp(26px,4.4vw,35px);line-height:1.22;margin:0 0 10px;text-wrap:balance}
+  .dek{color:var(--ink-soft);font-size:17px;margin:0 0 30px;max-width:56ch}
+  h3{font-family:var(--body);font-weight:600;font-size:17.5px;letter-spacing:-.005em;margin:36px 0 10px}
+  h4{font-family:var(--body);font-weight:600;font-size:16.5px;margin:24px 0 6px;color:var(--wine)}
+
+  .pull{border-left:3px solid var(--gold);background:var(--gold-tint);padding:14px 20px;margin:0 0 26px;font-family:var(--display);font-size:18px;line-height:1.6;color:var(--ink);max-width:62ch}
+  .note{background:var(--green-tint);border-left:3px solid var(--green);padding:15px 18px;margin:26px 0;font-size:16px;line-height:1.7;color:var(--ink-soft);max-width:66ch}
+  .note b{color:var(--ink);font-weight:600}
+
+  figure{margin:36px 0}
+  .figframe{background:var(--surface);border:1px solid var(--rule);padding:22px 18px}
+  figure svg{display:block;width:100%;max-width:100%;height:auto;color:var(--ink)}
+  figcaption{font-size:15px;line-height:1.65;color:var(--ink-soft);margin-top:12px;padding-left:12px;border-left:2px solid var(--wine);max-width:62ch}
+  .svgt{font-family:var(--body);font-weight:400}
+  .svgm{font-family:var(--mono)}
+  .svgb{font-family:var(--body);font-weight:600}
+
+  .tablewrap{overflow-x:auto;margin:24px 0;border:1px solid var(--rule);background:var(--surface)}
+  table{width:100%;min-width:600px;border-collapse:collapse;font-size:16px}
+  caption{text-align:left;font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);padding:14px 16px 2px;caption-side:top}
+  th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--rule-soft);vertical-align:top;line-height:1.55}
+  thead th{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;border-bottom:1px solid var(--rule)}
+  tbody th{font-weight:500;color:var(--ink)}
+  tbody th small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);letter-spacing:.02em}
+  tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+  td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+  td.sig{white-space:nowrap;font-weight:500}
+
+  .steps{list-style:none;margin:26px 0;padding:0;max-width:66ch;counter-reset:st}
+  .steps li{counter-increment:st;position:relative;padding:0 0 18px 48px;border-bottom:1px solid var(--rule-soft);margin-bottom:18px}
+  .steps li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .steps li::before{content:counter(st)"단계";position:absolute;left:0;top:2px;font-family:var(--mono);font-size:11.5px;color:var(--wine);width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--wine);line-height:1.1;text-align:center}
+  .steps b{display:block;font-weight:600;font-size:17px;margin-bottom:2px}
+  .steps span{font-size:16.5px;color:var(--ink-soft);line-height:1.72}
+  ul.plain{margin:18px 0;padding-left:1.1em;max-width:66ch;font-size:16.5px}
+  ul.plain li{margin-bottom:8px;padding-left:4px}
+  ul.plain li::marker{color:var(--wine)}
+
+  .winecard{border:1px solid var(--rule);background:var(--surface);padding:26px 24px;margin:30px 0}
+  .winecard .wno{font-family:var(--mono);font-size:12.5px;letter-spacing:.2em;color:var(--wine)}
+  .winecard h3{margin:8px 0 2px;font-family:var(--display);font-size:clamp(21px,3.4vw,26px);line-height:1.3;font-weight:700}
+  .winecard .orig{font-family:var(--mono);font-size:13px;color:var(--ink-faint);margin:0 0 10px}
+  .winecard .tagline{font-family:var(--display);font-size:17px;color:var(--gold);margin:0 0 20px;line-height:1.55}
+
+  /* ---- real product photos ---- */
+  .wc-head{display:flex;gap:28px;align-items:flex-start;justify-content:space-between}
+  .wc-head .wc-text{flex:1;min-width:0}
+  .wc-head .bottle-shot{flex:none;width:192px;margin:0;align-self:flex-start}
+  .bottle-shot .mat{background:#FBFAF8;border:1px solid var(--rule);padding:14px 12px 10px}
+  .bottle-shot img{display:block;width:100%;height:auto}
+  .bottle-shot figcaption{border:0;padding:0;margin-top:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;color:var(--ink-faint);text-align:center;max-width:none}
+  @media (max-width:560px){
+    .wc-head{flex-direction:column-reverse;gap:14px}
+    .wc-head .bottle-shot{width:150px;align-self:center}
+  }
+  .labelphotos,.photorow{display:flex;gap:18px;flex-wrap:wrap;margin:26px 0 8px}
+  .labelphotos figure,.photorow figure{flex:1 1 180px;max-width:220px;margin:0;background:#FBFAF8;border:1px solid var(--rule);padding:16px 14px 12px}
+  .labelphotos img,.photorow img{display:block;width:100%;height:auto;margin:0 auto;object-fit:cover}
+  .labelphotos figcaption,.photorow figcaption{border:0;padding:0;margin-top:10px;font-size:14px;color:var(--ink-soft);text-align:center;max-width:none}
+  .labelphotos figcaption b,.photorow figcaption b{display:block;color:var(--ink);font-weight:600;margin-bottom:1px}
+
+  /* ---- four structural terms : body, carbonation, sweetness, acidity ---- */
+  .terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0}
+  .terms>div{background:var(--surface);padding:19px 19px 17px}
+  .terms .tno{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--wine)}
+  .terms h4{margin:6px 0 8px;font-family:var(--display);font-size:19px;font-weight:700;color:var(--ink)}
+  .terms p{margin:0 0 10px;font-size:16px;line-height:1.68;color:var(--ink-soft)}
+  .terms .where{display:flex;gap:8px;align-items:baseline;font-size:14px;color:var(--ink-soft);border-top:1px solid var(--rule-soft);padding-top:9px}
+  .terms .where b{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);flex:none}
+
+  /* ---- single inset photo, sized to sit inside the running text ---- */
+  figure.photo{max-width:320px;margin:30px auto}
+  figure.photo.wide{max-width:420px}
+  figure.photo .frame{background:#FBFAF8;border:1px solid var(--rule);padding:10px}
+  figure.photo img{display:block;width:100%;height:auto}
+  figure.photo figcaption{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin-top:11px;padding-left:12px;border-left:2px solid var(--wine);max-width:none;text-align:left}
+  .spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:22px}
+  .spec>div{background:var(--surface);padding:12px 14px}
+  .spec dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:3px}
+  .spec dd{margin:0;font-size:16px;line-height:1.55}
+  .profile{margin:0 0 18px;border-top:1px solid var(--rule-soft)}
+  .profile>div{display:grid;grid-template-columns:76px 1fr;gap:6px 18px;padding:11px 0;border-bottom:1px solid var(--rule-soft);align-items:baseline}
+  .profile dt{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink-faint);text-transform:uppercase}
+  .profile dd{margin:0;font-size:16px;line-height:1.65;color:var(--ink-soft)}
+  .pips{display:inline-flex;gap:4px;vertical-align:-1px;margin-right:10px}
+  .pips i{width:11px;height:11px;border:1px solid var(--wine);display:block}
+  .pips i.on{background:var(--wine)}
+
+  .checklist{list-style:none;margin:26px 0;padding:0;max-width:68ch;counter-reset:ck}
+  .checklist li{counter-increment:ck;position:relative;padding:0 0 18px 48px;border-bottom:1px solid var(--rule-soft);margin-bottom:18px}
+  .checklist li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .checklist li::before{content:counter(ck);position:absolute;left:0;top:2px;font-family:var(--mono);font-size:13px;color:var(--wine);width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--wine)}
+  .checklist b{display:block;font-weight:600;font-size:16.5px;margin-bottom:2px}
+  .checklist span{font-size:15.5px;color:var(--ink-soft);line-height:1.72}
+
+  .rating{margin:0 0 18px;border-top:1px solid var(--rule-soft)}
+  .rating .rrow{display:grid;grid-template-columns:66px auto 1fr;gap:4px 12px;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule-soft)}
+  .rating .rrow:last-child{border-bottom:0}
+  .rating .rlabel{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-faint)}
+  .rating .rhint{font-size:14px;color:var(--ink-soft);text-align:right}
+  @media (max-width:420px){
+    .rating .rrow{grid-template-columns:58px auto 1fr;gap:3px 8px}
+    .rating .rhint{font-size:13px}
+  }
+  .pairing{background:var(--wine-tint);padding:13px 16px;font-size:16px;line-height:1.65}
+  .pairing b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--wine);display:block;margin-bottom:3px}
+
+  form.journal{border:1px solid var(--rule);background:var(--surface);padding:8px 0;margin:26px 0}
+  form.journal>div{display:grid;grid-template-columns:168px 1fr;gap:4px 20px;padding:13px 22px;border-bottom:1px solid var(--rule-soft);align-items:start}
+  form.journal>div input[type=text]{margin-top:2px}
+  form.journal>div:last-child{border-bottom:0}
+  form.journal label.k{font-size:16px;font-weight:500}
+  form.journal input[type=text]{width:100%;font-family:var(--body);font-size:16px;font-weight:300;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--rule);padding:5px 2px}
+  form.journal input[type=text]:focus{border-bottom-color:var(--wine);outline:0}
+  .rate{display:flex;flex-wrap:wrap;gap:8px 22px}
+  .rate fieldset{border:0;margin:0;padding:0;display:flex;align-items:center;gap:8px}
+  .rate legend{float:left;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink-faint);text-transform:uppercase;padding:0 8px 0 0}
+
+  .tastingexample{border:1px solid var(--rule);background:var(--wine-tint);padding:22px 24px;margin:24px 0 30px}
+  .tastingexample .extag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);display:block;margin-bottom:4px}
+  .tastingexample h4{margin:0 0 16px;font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink)}
+  .tastingexample dl{margin:0;border-top:1px solid rgba(123,27,60,.18)}
+  .tastingexample dl>div{display:grid;grid-template-columns:168px 1fr;gap:4px 16px;padding:9px 0;border-bottom:1px solid rgba(123,27,60,.18);align-items:baseline}
+  .tastingexample dt{font-weight:500;color:var(--ink);font-size:14.5px}
+  .tastingexample dd{margin:0;color:var(--ink-soft);font-size:14.5px;line-height:1.6}
+  .tastingexample .exrate{display:flex;flex-wrap:wrap;gap:6px 20px}
+  .tastingexample .exrate span{white-space:nowrap;font-size:13.5px}
+  .tastingexample .exrate .pips i{width:9px;height:9px}
+  @media (max-width:520px){
+    .tastingexample dl>div{grid-template-columns:1fr;gap:2px}
+  }
+
+  .fieldhint{display:block;font-size:12.5px;color:var(--ink-faint);font-weight:400;margin-top:2px}
+  .rate-note{font-size:13.5px;color:var(--ink-soft);margin:0 0 12px}
+  .rate input[type=checkbox]{appearance:none;-webkit-appearance:none;width:14px;height:14px;border:1px solid var(--wine);background:transparent;margin:0;cursor:pointer}
+  .rate input[type=checkbox]:checked{background:var(--wine)}
+  @media (max-width:560px){
+    form.journal>div{grid-template-columns:1fr}
+  }
+
+  footer{border-top:1px solid var(--ink);margin-top:68px;padding-block:26px 76px;font-size:15px;color:var(--ink-faint);line-height:1.75}
+  footer p{margin:0 0 .4em}
+  :focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="kicker">와인 입문 기본 가이드</p>
+    <h1>와인의 세계로<br>떠나는 첫걸음</h1>
+    <p class="standfirst">색과 스타일로 와인을 이해하고, 라벨을 읽고, 오감으로 맛을 적어 보는 일까지. 와인을 조금 더 깊이, 그리고 즐겁게 마시기 위한 여섯 장의 안내서입니다.</p>
+    <div class="huestrip" aria-hidden="true">
+      <span style="background:#E4E9B4"></span><span style="background:#F0D96B"></span><span style="background:#D9A72C"></span><span style="background:#B5772B"></span><span style="background:#F5C3B4"></span><span style="background:#E58A97"></span><span style="background:#8E1C3A"></span><span style="background:#6E1626"></span><span style="background:#4A1232"></span><span style="background:#8A4A2E"></span>
+    </div>
+    <p class="huestrip-note"><span>레몬그린 · 어린 화이트</span><span>토니 · 오래 숙성된 레드</span></p>
+    <p class="credit">원본 자료 제공 : 와인전문 바틀샵 피에스타 &nbsp;·&nbsp; 웹 문서용 재구성</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="toc" aria-label="목차">
+    <h2>차례</h2>
+    <ol>
+      <li><a href="#ch1"><span class="n">01</span><span>와인의 기초 : 색과 스타일로 이해하기</span></a></li>
+      <li><a href="#ch2"><span class="n">02</span><span>포도 품종과 양조의 과학</span></a></li>
+      <li><a href="#ch3"><span class="n">03</span><span>와인 라벨 해독기 : 구대륙 vs 신대륙</span></a></li>
+      <li><a href="#ch4"><span class="n">04</span><span>실전 테이스팅 : 오감 매뉴얼</span></a></li>
+      <li><a href="#ch5"><span class="n">05</span><span>실전 테이스팅 노트 : 추천 와인 3종</span></a></li>
+      <li><a href="#ch6"><span class="n">06</span><span>와인 보관 : 온도 · 습도 · 남은 와인</span></a></li>
+      <li><a href="#ch7"><span class="n">07</span><span>실패 없이 첫 와인 고르는 법</span></a></li>
+      <li><a href="#appendix"><span class="n">부록</span><span>나만의 시음 기록지</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ================= 1장 ================= -->
+  <section id="ch1">
+    <span class="chno">1장</span>
+    <h2 class="ch">와인의 기초 : 색과 스타일로 이해하기</h2>
+    <p class="dek">와인은 크게 <strong>포도를 어떻게 짰는가(색상)</strong>와 <strong>어떤 특수 공정을 거쳤는가(스타일)</strong>로 나뉩니다. 이 두 축만 잡아 두면 와인 리스트의 90%는 자리를 찾습니다.</p>
+
+    <h3>1. 색깔에 따른 분류 — 양조 과정의 차이</h3>
+    <div class="prose">
+      <p>레드와 화이트를 가르는 것은 포도의 색이 아니라 <span class="lede-em">껍질을 언제 분리하는가</span>입니다. 같은 검은 포도로도 껍질을 얼마나 오래 함께 두느냐에 따라 레드가 되고 로제가 됩니다.</p>
+    </div>
+
+    <div class="photorow">
+      <figure>
+        <img src="bottles/grape-black.jpg" alt="포도나무에 매달린 검은 포도송이 실제 사진" loading="lazy" width="900" height="1350">
+        <figcaption><b>검은 포도</b>레드 · 로제 와인의 원료</figcaption>
+      </figure>
+      <figure>
+        <img src="bottles/grape-green.jpg" alt="프랑스 아비즈(샹파뉴)에서 자란 샤르도네 청포도송이 실제 사진" loading="lazy" width="900" height="1350">
+        <figcaption><b>청포도 · 샤르도네</b>프랑스 아비즈(Avize), 샹파뉴 — 블랑 드 블랑의 심장부</figcaption>
+      </figure>
+    </div>
+
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 760 300" role="img" aria-label="검은 포도는 껍질을 함께 발효하면 레드, 초반만 발효 후 제거하면 로제가 되고, 청포도는 껍질 없이 과즙만 발효해 화이트가 된다">
+          <defs>
+            <marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <polygon points="0,1 10,5 0,9" fill="currentColor"></polygon>
+            </marker>
+          </defs>
+          <!-- 원료 -->
+          <rect x="20" y="60" width="112" height="46" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgb" x="76" y="88" font-size="14" text-anchor="middle" fill="currentColor">검은 포도</text>
+          <rect x="20" y="190" width="112" height="46" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgb" x="76" y="218" font-size="14" text-anchor="middle" fill="currentColor">청포도 · 과즙</text>
+          <!-- 분기 화살표 -->
+          <path d="M132 83 H156 V43 H176" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar1)"></path>
+          <path d="M132 83 H156 V123 H176" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar1)"></path>
+          <path d="M132 213 H176" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar1)"></path>
+          <!-- 공정 -->
+          <rect x="180" y="20" width="246" height="46" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgt" x="303" y="48" font-size="14" text-anchor="middle" fill="currentColor">껍질 + 씨 + 과육 함께 발효</text>
+          <rect x="180" y="100" width="246" height="46" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgt" x="303" y="128" font-size="14" text-anchor="middle" fill="currentColor">초반만 껍질을 발효한 후 제거</text>
+          <rect x="180" y="190" width="246" height="46" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgt" x="303" y="218" font-size="14" text-anchor="middle" fill="currentColor">껍질 없이 과즙만 발효</text>
+          <line x1="426" y1="43" x2="492" y2="43" stroke="currentColor" stroke-width="1" marker-end="url(#ar1)"></line>
+          <line x1="426" y1="123" x2="492" y2="123" stroke="currentColor" stroke-width="1" marker-end="url(#ar1)"></line>
+          <line x1="426" y1="213" x2="492" y2="213" stroke="currentColor" stroke-width="1" marker-end="url(#ar1)"></line>
+          <!-- 실제 사진 : 레드 -->
+          <image href="bottles/glass-red.jpg" x="512" y="14" width="56" height="56" preserveAspectRatio="xMidYMid slice"></image>
+          <rect x="512" y="14" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgb" x="580" y="36" font-size="14" fill="currentColor">레드 와인</text>
+          <text class="svgt" x="580" y="54" font-size="12.5" fill="currentColor" opacity=".72">붉은 색소 + 떫은 탄닌</text>
+          <!-- 실제 사진 : 로제 -->
+          <image href="bottles/glass-rose.jpg" x="512" y="94" width="56" height="56" preserveAspectRatio="xMidYMid slice"></image>
+          <rect x="512" y="94" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgb" x="580" y="116" font-size="14" fill="currentColor">로제 와인</text>
+          <text class="svgt" x="580" y="134" font-size="12.5" fill="currentColor" opacity=".72">핑크빛 + 상큼함과 풍미</text>
+          <!-- 실제 사진 : 화이트 -->
+          <image href="bottles/glass-white.jpg" x="512" y="184" width="56" height="56" preserveAspectRatio="xMidYMid slice"></image>
+          <rect x="512" y="184" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1"></rect>
+          <text class="svgb" x="580" y="206" font-size="14" fill="currentColor">화이트 와인</text>
+          <text class="svgt" x="580" y="224" font-size="12.5" fill="currentColor" opacity=".72">맑은 노란빛 + 상큼한 산미</text>
+          <!-- 분기 주석 -->
+          <text class="svgm" x="156" y="166" font-size="11.5" fill="currentColor" opacity=".6">같은 포도, 다른 껍질 접촉 시간</text>
+        </svg>
+      </div>
+      <figcaption>표 1-1의 양조 흐름. 레드와 로제는 원료가 같은 검은 포도이며, 차이는 껍질·씨를 발효통에 얼마나 오래 남겨 두는지 하나뿐입니다.</figcaption>
+    </figure>
+
+    <h4>🍷 레드 와인 (Red Wine)</h4>
+    <div class="prose">
+      <p><strong>핵심 특징</strong> — 포도 껍질에서 우러나온 붉은 색소와, 잇몸을 조이는 떫은맛인 <span class="lede-em">탄닌(Tannin)</span>이 특징입니다.<br>
+      <strong>추천 페어링</strong> — 스테이크, 양갈비, 불고기 등 기름지고 묵직한 육류 요리. 탄닌이 기름기를 잡아줍니다.</p>
+    </div>
+    <h4>🥂 화이트 와인 (White Wine)</h4>
+    <div class="prose">
+      <p><strong>핵심 특징</strong> — 껍질을 제거하고 발효해 탄닌이 거의 없으며, 침샘을 자극하는 상큼한 <span class="lede-em">산미(Acidity)</span>가 돋보입니다.<br>
+      <strong>추천 페어링</strong> — 생선회, 석화(굴), 조개찜, 샐러드 등 신선한 해산물 및 가벼운 요리.</p>
+    </div>
+    <h4>🌸 로제 와인 (Rosé Wine)</h4>
+    <div class="prose">
+      <p><strong>핵심 특징</strong> — 레드와 화이트의 장점을 결합한 와인으로, 차갑게 칠링해서 마시면 어떤 음식과도 두루 잘 어울립니다.</p>
+    </div>
+
+    <figure class="photo">
+      <div class="frame"><img src="bottles/glasses3.jpg" alt="화이트, 로제, 레드 와인이 각각 담긴 잔이 나란히 놓여 색상 대비를 보여주는 실제 사진" loading="lazy" width="900" height="1350"></div>
+      <figcaption>같은 조명 아래 놓인 화이트 · 로제 · 레드. 색의 짙기만으로도 어떤 와인인지 짐작할 수 있습니다.</figcaption>
+    </figure>
+
+    <h3>2. 스타일에 따른 4대 분류</h3>
+    <div class="tablewrap">
+      <table>
+        <caption>표 1-2. 스타일별 분류와 국가별 대표 명칭</caption>
+        <thead>
+          <tr><th scope="col">스타일 분류</th><th scope="col">핵심 원리 및 특징</th><th scope="col">국가별 대표 명칭 및 예시</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1. 스틸 와인<small>Still Wine</small></th>
+            <td>탄산이 전혀 없는 가장 일반적인 와인</td>
+            <td>우리가 흔히 마시는 대부분의 레드 · 화이트 · 로제 와인</td>
+          </tr>
+          <tr>
+            <th scope="row">2. 스파클링 와인<small>Sparkling Wine</small></th>
+            <td>병 속(또는 탱크)에서 2차 발효를 거쳐 탄산가스를 가둔 발포성 와인</td>
+            <td><strong>프랑스</strong> 샴페인(샹파뉴 지역), 크레망(그 외 8개 지역) · <strong>이탈리아</strong> 스푸만테(강한 탄산), 프리잔테(약한 탄산), 프로세코 · <strong>스페인</strong> 까바(Cava)</td>
+          </tr>
+          <tr>
+            <th scope="row">3. 주정강화 와인<small>Fortified Wine</small></th>
+            <td>발효 중 또는 후에 포도 증류주(브랜디)를 첨가해 도수(17~20%)를 높인 와인</td>
+            <td><strong>포르투갈</strong> 포트(Port), 마데이라(Madeira) · <strong>스페인</strong> 셰리(Sherry) · <strong>이탈리아</strong> 마르살라(Marsala) · <strong>프랑스 남부</strong> 뱅 두 나투렐(Vin Doux Naturel)</td>
+          </tr>
+          <tr>
+            <th scope="row">4. 디저트 와인<small>Dessert Wine</small></th>
+            <td>포도의 당도를 농축하거나 발효를 인위적으로 중단해 달콤한 잔당을 남긴 와인</td>
+            <td>늦수확(Late Harvest) / 귀부 와인 / 아이스 와인 · <strong>건조 포도 방식</strong> 이탈리아 아파시멘토, 아마로네</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 740 300" role="img" aria-label="스틸 와인을 기준으로 2차 발효로 탄산을 가두면 스파클링, 브랜디를 더해 도수를 높이면 주정강화, 당분을 농축하거나 발효를 중단하면 디저트 와인이 된다">
+          <defs>
+            <marker id="ar4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <polygon points="0,1 10,5 0,9" fill="currentColor"></polygon>
+            </marker>
+          </defs>
+          <rect x="16" y="128" width="150" height="48" fill="var(--wine-tint)" stroke="var(--wine)" stroke-width="1.3"></rect>
+          <text class="svgb" x="91" y="148" font-size="14" text-anchor="middle" fill="var(--wine)">스틸 와인</text>
+          <text class="svgt" x="91" y="165" font-size="11.5" text-anchor="middle" fill="var(--wine)" opacity=".8">탄산 없음 · 기준점</text>
+
+          <path d="M166 152 C230 152 250 60 310 60" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar4)"></path>
+          <path d="M166 152 L300 152" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar4)"></path>
+          <path d="M166 152 C230 152 250 244 310 244" fill="none" stroke="currentColor" stroke-width="1" marker-end="url(#ar4)"></path>
+
+          <text class="svgm" x="210" y="48" font-size="11.5" fill="currentColor" opacity=".65">+ 병 내 2차 발효</text>
+          <text class="svgm" x="210" y="142" font-size="11.5" fill="currentColor" opacity=".65">+ 브랜디 첨가</text>
+          <text class="svgm" x="210" y="236" font-size="11.5" fill="currentColor" opacity=".65">+ 당분 농축 / 발효 중단</text>
+
+          <rect x="316" y="34" width="180" height="52" fill="none" stroke="currentColor"></rect>
+          <text class="svgb" x="406" y="56" font-size="13" text-anchor="middle" fill="currentColor">스파클링 와인</text>
+          <text class="svgt" x="406" y="74" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".7">CO₂를 가둔 발포성</text>
+
+          <rect x="316" y="218" width="180" height="52" fill="none" stroke="currentColor"></rect>
+          <text class="svgb" x="406" y="240" font-size="13" text-anchor="middle" fill="currentColor">디저트 와인</text>
+          <text class="svgt" x="406" y="258" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".7">달콤한 잔당</text>
+
+          <rect x="300" y="126" width="196" height="52" fill="none" stroke="currentColor"></rect>
+          <text class="svgb" x="398" y="148" font-size="13" text-anchor="middle" fill="currentColor">주정강화 와인</text>
+          <text class="svgt" x="398" y="166" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".7">도수 17~20%로 상승</text>
+
+          <line x1="496" y1="60" x2="560" y2="60" stroke="currentColor" opacity=".55" marker-end="url(#ar4)"></line>
+          <line x1="496" y1="152" x2="560" y2="152" stroke="currentColor" opacity=".55" marker-end="url(#ar4)"></line>
+          <line x1="496" y1="244" x2="560" y2="244" stroke="currentColor" opacity=".55" marker-end="url(#ar4)"></line>
+
+          <text class="svgt" x="566" y="52" font-size="11.5" fill="currentColor" opacity=".75">샴페인 · 까바 · 프로세코</text>
+          <text class="svgt" x="566" y="144" font-size="11.5" fill="currentColor" opacity=".75">포트 · 셰리 · 마데이라</text>
+          <text class="svgt" x="566" y="236" font-size="11.5" fill="currentColor" opacity=".75">아이스 와인 · 귀부 와인</text>
+        </svg>
+      </div>
+      <figcaption>네 스타일은 서로 다른 와인이 아니라, 스틸 와인에 <strong>무엇을 더하거나 바꾸는지</strong>로 갈라집니다 — 탄산을 가두면 스파클링, 브랜디로 도수를 올리면 주정강화, 당분을 남기면 디저트 와인입니다.</figcaption>
+    </figure>
+
+    <h4>🥂 스파클링 와인 (Sparkling Wine)</h4>
+    <div class="prose">
+      <p><strong>핵심 특징</strong> — 병이나 탱크 안에 갇힌 탄산가스가 잔에 따르는 순간 기포로 터져 나옵니다. 샴페인처럼 <strong>전통 방식(병 내 2차 발효)</strong>으로 만들수록 기포가 가늘고 오래 유지되며, 탱크에서 한꺼번에 발효하는 프로세코 방식은 기포가 조금 더 굵고 가볍게 느껴집니다.<br>
+      <strong>추천 페어링</strong> — 튀김, 초밥처럼 기름지거나 짭짤한 음식. 톡 쏘는 탄산이 입안을 개운하게 씻어 줍니다.</p>
+    </div>
+    <h4>🥃 주정강화 와인 (Fortified Wine)</h4>
+    <div class="prose">
+      <p><strong>핵심 특징</strong> — 발효 중이나 후에 포도 증류주(브랜디)를 더해 도수를 17~20%까지 끌어올립니다. 도수가 높아 산화에 강하다 보니, 개봉 후에도 6장에서 본 것처럼 한 달 가까이 두고 조금씩 마실 수 있습니다.<br>
+      <strong>추천 페어링</strong> — 견과류, 블루치즈, 다크 초콜릿처럼 향이 진한 디저트나 안주.</p>
+    </div>
+    <h4>🍯 디저트 와인 (Dessert Wine)</h4>
+    <div class="prose">
+      <p><strong>핵심 특징</strong> — 포도의 당분을 그대로 남기거나 더 농축해 단맛을 살린 와인입니다. 포도를 일부러 늦게 따거나(Late Harvest), 짚이나 채반 위에서 건조시키거나(아파시멘토), 귀부균이 포도알의 수분만 날려 당도를 확 끌어올리는 방식(귀부 와인)까지 방법은 다양합니다.<br>
+      <strong>추천 페어링</strong> — 와인 자체가 이미 디저트에 가까우니, 블루치즈나 아주 담백한 과일 디저트 정도만 곁들여도 충분합니다.</p>
+    </div>
+  </section>
+
+  <!-- ================= 2장 ================= -->
+  <section id="ch2">
+    <span class="chno">2장</span>
+    <h2 class="ch">포도 품종과 양조의 과학 : 맛과 향의 비밀</h2>
+    <p class="dek">와인의 맛은 포도가 가져온 것(1차 향)과 양조가 더한 것(2·3차 향)의 합입니다. 품종표를 외우기 전에, 발효라는 한 줄짜리 공식부터 보겠습니다.</p>
+
+    <h3>와인이 만들어지는 기본 공식</h3>
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 600 212" role="img" aria-label="포도즙의 당분과 효모가 알코올, 탄산가스, 열로 바뀌는 발효 공식과 구조감의 3요소">
+          <defs>
+            <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+              <polygon points="0,1 10,5 0,9" fill="currentColor"></polygon>
+            </marker>
+          </defs>
+          <rect x="10" y="40" width="104" height="44" fill="none" stroke="currentColor"></rect>
+          <text class="svgt" x="62" y="67" font-size="13" text-anchor="middle" fill="currentColor">포도즙의 당분</text>
+          <text class="svgm" x="126" y="68" font-size="15.5" text-anchor="middle" fill="currentColor">+</text>
+          <rect x="142" y="40" width="56" height="44" fill="none" stroke="currentColor"></rect>
+          <text class="svgt" x="170" y="67" font-size="13" text-anchor="middle" fill="currentColor">효모</text>
+          <line x1="206" y1="62" x2="232" y2="62" stroke="currentColor" marker-end="url(#ar2)"></line>
+          <rect x="238" y="40" width="86" height="44" fill="var(--wine-tint)" stroke="var(--wine)"></rect>
+          <text class="svgb" x="281" y="67" font-size="14" text-anchor="middle" fill="var(--wine)">알코올</text>
+          <text class="svgm" x="337" y="68" font-size="15.5" text-anchor="middle" fill="currentColor">+</text>
+          <rect x="350" y="40" width="118" height="44" fill="none" stroke="currentColor"></rect>
+          <text class="svgt" x="409" y="67" font-size="13" text-anchor="middle" fill="currentColor">탄산가스 CO₂</text>
+          <text class="svgm" x="481" y="68" font-size="15.5" text-anchor="middle" fill="currentColor">+</text>
+          <rect x="494" y="40" width="50" height="44" fill="none" stroke="currentColor"></rect>
+          <text class="svgt" x="519" y="67" font-size="13" text-anchor="middle" fill="currentColor">열</text>
+          <text class="svgm" x="10" y="26" font-size="11.5" letter-spacing="1" fill="currentColor" opacity=".6">발효</text>
+          <text class="svgm" x="10" y="118" font-size="11.5" letter-spacing="1" fill="currentColor" opacity=".6">구조감의 3요소</text>
+          <g>
+            <rect x="10" y="130" width="180" height="62" fill="none" stroke="currentColor"></rect>
+            <text class="svgb" x="24" y="154" font-size="14" fill="currentColor">탄닌</text>
+            <text class="svgt" x="24" y="174" font-size="12.5" fill="currentColor" opacity=".72">떫은맛 · 장기 숙성의 원동력</text>
+            <rect x="210" y="130" width="180" height="62" fill="none" stroke="currentColor"></rect>
+            <text class="svgb" x="224" y="154" font-size="14" fill="currentColor">산도</text>
+            <text class="svgt" x="224" y="174" font-size="12.5" fill="currentColor" opacity=".72">상큼함 · 밸런스 유지</text>
+            <rect x="410" y="130" width="180" height="62" fill="none" stroke="currentColor"></rect>
+            <text class="svgb" x="424" y="154" font-size="14" fill="currentColor">당도</text>
+            <text class="svgt" x="424" y="174" font-size="12.5" fill="currentColor" opacity=".72">단맛 · 묵직함</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>효모가 당분을 알코올로 바꾸고, 그 부산물로 탄산가스와 열이 나옵니다. <strong>바디감</strong>은 입안에서 느껴지는 무게감으로, 알코올 함량이 높을수록, 당분이 많을수록 묵직해집니다.</figcaption>
+    </figure>
+
+    <h3>알코올 함량 — 와인의 숨은 지휘자</h3>
+    <div class="prose">
+      <p>라벨 한쪽에 작게 적힌 <strong>알코올 도수(ABV, Alcohol by Volume)</strong>는 발효 중 효모가 포도당을 얼마나 알코올로 바꿨는지를 보여주는 숫자입니다. 포도가 햇빛을 많이 받아 당분이 높게 여물수록, 그리고 발효를 끝까지 진행할수록 도수는 올라갑니다.</p>
+      <p>도수는 단순히 "취하는 정도"가 아니라 <strong>맛의 체감에도 직접 관여</strong>합니다. 도수가 높을수록 입안에서 느껴지는 무게감(바디감)이 커지고, 삼킨 뒤 목 안쪽이 살짝 뜨거워지는 듯한 느낌도 강해집니다. 반대로 도수가 낮은 와인은 가볍고 산뜻하게 넘어갑니다. 그래서 같은 레드 와인이라도 피노 누아(12~13%)와 진판델(14~15%)을 나란히 마셔 보면 무게감의 차이가 도수만으로도 꽤 크게 느껴집니다.</p>
+    </div>
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 760 150" role="img" aria-label="알코올 도수는 스위트 모스카토 5에서 7퍼센트부터 일반 테이블 와인 11에서 14퍼센트, 진판델 같은 농익은 레드 14에서 16퍼센트를 거쳐 주정강화 와인 17에서 20퍼센트까지 올라간다">
+          <line x1="40" y1="74" x2="720" y2="74" stroke="currentColor" opacity=".35"></line>
+          <line x1="40" y1="66" x2="40" y2="82" stroke="currentColor" opacity=".5"></line>
+          <line x1="720" y1="66" x2="720" y2="82" stroke="currentColor" opacity=".5"></line>
+          <text class="svgm" x="40" y="100" font-size="12" text-anchor="middle" fill="currentColor" opacity=".65">5%</text>
+          <text class="svgm" x="720" y="100" font-size="12" text-anchor="middle" fill="currentColor" opacity=".65">20%</text>
+
+          <rect x="40" y="60" width="91" height="28" fill="var(--wine-tint)"></rect>
+          <text class="svgt" x="85" y="44" font-size="12.5" text-anchor="middle" fill="currentColor">모스카토 다스티</text>
+          <text class="svgm" x="85" y="106" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">5~7%</text>
+
+          <rect x="312" y="60" width="136" height="28" fill="var(--wine-tint)"></rect>
+          <text class="svgt" x="380" y="44" font-size="12.5" text-anchor="middle" fill="currentColor">일반 테이블 와인</text>
+          <text class="svgm" x="380" y="106" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">11~14%</text>
+
+          <rect x="448" y="60" width="91" height="28" fill="var(--wine-tint)"></rect>
+          <text class="svgt" x="494" y="44" font-size="12.5" text-anchor="middle" fill="currentColor">진판델 · 아마로네</text>
+          <text class="svgm" x="494" y="106" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">14~16%</text>
+
+          <rect x="584" y="60" width="136" height="28" fill="var(--wine)"></rect>
+          <text class="svgt" x="652" y="44" font-size="12.5" text-anchor="middle" fill="currentColor">포트 · 셰리(주정강화)</text>
+          <text class="svgm" x="652" y="106" font-size="11" fill="var(--surface)" text-anchor="middle">17~20%</text>
+
+          <text class="svgm" x="40" y="132" font-size="11" fill="currentColor" opacity=".6">도수가 오를수록 바디감과 목 넘김의 온기도 함께 커집니다</text>
+        </svg>
+      </div>
+      <figcaption>와인 스타일별 일반적인 알코올 도수 구간입니다. 디저트 · 주정강화 와인(6장)이 유독 도수가 높은 것은 발효 중 브랜디를 더하거나 당분을 농축하기 때문입니다.</figcaption>
+    </figure>
+
+    <h3>와인을 읽는 다섯 가지 축</h3>
+    <p class="dek">시음 노트나 와인 숍의 설명표에 빠짐없이 등장하는 다섯 단어입니다. 뜻만 알아 둬도 라벨 뒷면이나 리뷰의 절반은 해석됩니다.</p>
+    <div class="terms">
+      <div>
+        <span class="tno">01</span>
+        <h4>바디감 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Body</span></h4>
+        <p>입안에 머금었을 때 느껴지는 와인의 무게감입니다. 물처럼 가벼운지, 우유처럼 매끈한지, 생크림처럼 진득한지를 떠올리면 쉽습니다. 알코올 도수가 높을수록, 당분과 포도 자체의 농축도가 높을수록 입안에서 더 묵직하게 느껴집니다.</p>
+        <p class="where"><b>느끼는 곳</b>입천장 전체를 덮는 질감</p>
+        <p class="where"><b>알아보는 팁</b>잔을 살짝 돌린 뒤 벽을 타고 흘러내리는 ‘와인의 눈물’이 느리고 굵을수록 바디가 무거운 편입니다</p>
+      </div>
+      <div>
+        <span class="tno">02</span>
+        <h4>탄산 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Carbonation</span></h4>
+        <p>병이나 탱크 안에 가둔 CO₂가 잔에 따르는 순간 기포로 빠져나오는 것입니다. 사실 미각이 아니라 혀를 콕콕 찌르는 <strong>촉각</strong> 자극으로, 스틸 와인은 0, 스파클링 와인은 가장 강합니다.</p>
+        <p class="where"><b>느끼는 곳</b>혀 표면을 쏘는 따끔거림</p>
+        <p class="where"><b>알아두면 좋은 점</b>기포가 가늘고 오래갈수록 1장의 전통 방식(병 내 2차 발효)으로 만들었을 가능성이 큽니다</p>
+      </div>
+      <div>
+        <span class="tno">03</span>
+        <h4>당도 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Sweetness</span></h4>
+        <p>발효가 끝난 뒤 와인에 남은 잔당(알코올로 바뀌지 않고 남은 포도당)의 양입니다. 효모가 당분을 남김없이 알코올로 바꾸면 드라이(Dry)한 와인이 되고, 발효를 일부러 멈추거나 당분을 더하면 스위트한 와인이 됩니다. 스파클링 라벨의 ‘브뤼(Brut)’도 이 당도를 가리키는 표현입니다.</p>
+        <p class="where"><b>느끼는 곳</b>혀끝</p>
+        <p class="where"><b>알아두면 좋은 점</b>산도가 높으면 당분이 있어도 더 드라이하게 느껴집니다 — 독일 리슬링이 꽤 달아도 산뜻한 이유입니다</p>
+      </div>
+      <div>
+        <span class="tno">04</span>
+        <h4>산도 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Acidity</span></h4>
+        <p>레몬즙이나 덜 익은 풋사과를 베어 물었을 때처럼 혀 양옆이 저릿하고 침이 고이게 만드는 상큼함입니다. 포도 자체에 들어 있는 유기산(주석산 · 사과산 등)에서 비롯되며, 서늘한 산지일수록, 수확이 이를수록 산도가 높아집니다.</p>
+        <p class="where"><b>느끼는 곳</b>혀 양옆, 침이 고이는 느낌</p>
+        <p class="where"><b>알아두면 좋은 점</b>단맛과 알코올의 무거움을 상쇄하는 ‘뼈대’ 역할을 하며, 산도가 높을수록 병 속에서 오래 버티는 숙성 잠재력도 커집니다</p>
+      </div>
+      <div>
+        <span class="tno">05</span>
+        <h4>탄닌 <span style="font-family:var(--mono);font-size:13.5px;color:var(--ink-faint);font-weight:400">Tannin</span></h4>
+        <p>덜 익은 감이나 진하게 우린 홍차를 마셨을 때처럼 입안이 마르고 혀가 오그라드는 떫은 느낌을 줍니다. 포도 껍질 · 씨, 그리고 오크통에서 우러나오며, 포도나무 입장에서는 씨를 동물로부터 지키려고 만드는 일종의 방어 물질입니다.</p>
+        <p class="where"><b>느끼는 곳</b>잇몸과 혀 안쪽을 조이는 떫은 느낌</p>
+        <p class="where"><b>알아두면 좋은 점</b>시간이 지날수록 부드러워져 레드 와인의 장기 숙성력을 좌우하고, 기름진 음식과 함께 먹으면 탄닌이 지방과 어우러져 한결 부드럽게 느껴집니다 — 스테이크와 레드 와인이 잘 맞는 이유입니다</p>
+      </div>
+    </div>
+
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 760 500" role="img" aria-label="바디감, 탄산, 당도, 산도, 탄닌 다섯 축 위에 이 가이드에서 다룬 품종과 와인들을 낮음에서 높음까지 배치한 비교 도표">
+          <!-- 바디감 -->
+          <text class="svgb" x="16" y="40" font-size="14" fill="currentColor">바디감</text>
+          <text class="svgt" x="16" y="56" font-size="11.5" fill="currentColor" opacity=".65">입안의 무게감</text>
+          <line x1="190" y1="84" x2="700" y2="84" stroke="currentColor" opacity=".35"></line>
+          <line x1="190" y1="76" x2="190" y2="92" stroke="currentColor" opacity=".5"></line>
+          <line x1="700" y1="76" x2="700" y2="92" stroke="currentColor" opacity=".5"></line>
+          <text class="svgm" x="190" y="102" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">가벼움</text>
+          <text class="svgm" x="700" y="102" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">묵직함</text>
+          <circle cx="266" cy="84" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="266" y="68" font-size="11.5" text-anchor="middle" fill="currentColor">피노 누아</text>
+          <circle cx="445" cy="84" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="445" y="68" font-size="11.5" text-anchor="middle" fill="currentColor">오크 숙성 샤르도네</text>
+          <circle cx="649" cy="84" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="649" y="68" font-size="11.5" text-anchor="middle" fill="currentColor">까베르네 쇼비뇽</text>
+
+          <!-- 탄산 -->
+          <text class="svgb" x="16" y="135" font-size="14" fill="currentColor">탄산</text>
+          <text class="svgt" x="16" y="151" font-size="11.5" fill="currentColor" opacity=".65">혀를 쏘는 기포</text>
+          <line x1="190" y1="179" x2="700" y2="179" stroke="currentColor" opacity=".35"></line>
+          <line x1="190" y1="171" x2="190" y2="187" stroke="currentColor" opacity=".5"></line>
+          <line x1="700" y1="171" x2="700" y2="187" stroke="currentColor" opacity=".5"></line>
+          <text class="svgm" x="190" y="197" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">없음</text>
+          <text class="svgm" x="700" y="197" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">강함</text>
+          <circle cx="216" cy="179" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="216" y="163" font-size="11.5" text-anchor="middle" fill="currentColor">스틸 와인</text>
+          <circle cx="394" cy="179" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="394" y="163" font-size="11.5" text-anchor="middle" fill="currentColor">프리잔테(약발포)</text>
+          <circle cx="639" cy="179" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="639" y="163" font-size="11.5" text-anchor="middle" fill="currentColor">쿠바제 블랑 드 블랑</text>
+
+          <!-- 당도 -->
+          <text class="svgb" x="16" y="230" font-size="14" fill="currentColor">당도</text>
+          <text class="svgt" x="16" y="246" font-size="11.5" fill="currentColor" opacity=".65">혀끝의 단맛</text>
+          <line x1="190" y1="274" x2="700" y2="274" stroke="currentColor" opacity=".35"></line>
+          <line x1="190" y1="266" x2="190" y2="282" stroke="currentColor" opacity=".5"></line>
+          <line x1="700" y1="266" x2="700" y2="282" stroke="currentColor" opacity=".5"></line>
+          <text class="svgm" x="190" y="292" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">드라이</text>
+          <text class="svgm" x="700" y="292" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">스위트</text>
+          <circle cx="241" cy="274" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="241" y="258" font-size="11.5" text-anchor="middle" fill="currentColor">대부분의 레드 · 화이트</text>
+          <circle cx="470" cy="274" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="470" y="258" font-size="11.5" text-anchor="middle" fill="currentColor">오프-드라이 리슬링</text>
+          <circle cx="659" cy="274" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="659" y="258" font-size="11.5" text-anchor="middle" fill="currentColor">아이스 와인 · 귀부 와인</text>
+
+          <!-- 산도 -->
+          <text class="svgb" x="16" y="325" font-size="14" fill="currentColor">산도</text>
+          <text class="svgt" x="16" y="341" font-size="11.5" fill="currentColor" opacity=".65">혀 양옆의 새콤함</text>
+          <line x1="190" y1="369" x2="700" y2="369" stroke="currentColor" opacity=".35"></line>
+          <line x1="190" y1="361" x2="190" y2="377" stroke="currentColor" opacity=".5"></line>
+          <line x1="700" y1="361" x2="700" y2="377" stroke="currentColor" opacity=".5"></line>
+          <text class="svgm" x="190" y="387" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">낮음</text>
+          <text class="svgm" x="700" y="387" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">높음</text>
+          <circle cx="251" cy="369" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="251" y="353" font-size="11.5" text-anchor="middle" fill="currentColor">게뷔르츠트라미너</text>
+          <circle cx="445" cy="369" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="445" y="353" font-size="11.5" text-anchor="middle" fill="currentColor">피노 누아</text>
+          <circle cx="649" cy="369" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="649" y="353" font-size="11.5" text-anchor="middle" fill="currentColor">고뜨홍 샤블리</text>
+
+          <!-- 탄닌 -->
+          <text class="svgb" x="16" y="420" font-size="14" fill="currentColor">탄닌</text>
+          <text class="svgt" x="16" y="436" font-size="11.5" fill="currentColor" opacity=".65">잇몸을 조이는 떫은맛</text>
+          <line x1="190" y1="464" x2="700" y2="464" stroke="currentColor" opacity=".35"></line>
+          <line x1="190" y1="456" x2="190" y2="472" stroke="currentColor" opacity=".5"></line>
+          <line x1="700" y1="456" x2="700" y2="472" stroke="currentColor" opacity=".5"></line>
+          <text class="svgm" x="190" y="482" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">거의 없음</text>
+          <text class="svgm" x="700" y="482" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">강함</text>
+          <circle cx="266" cy="464" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="266" y="448" font-size="11.5" text-anchor="middle" fill="currentColor">피노 누아</text>
+          <circle cx="445" cy="464" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="445" y="448" font-size="11.5" text-anchor="middle" fill="currentColor">메를로</text>
+          <circle cx="649" cy="464" r="5" fill="var(--wine)"></circle>
+          <text class="svgt" x="649" y="448" font-size="11.5" text-anchor="middle" fill="currentColor">까베르네 쇼비뇽</text>
+        </svg>
+      </div>
+      <figcaption>이 가이드에서 다룬 품종과 와인을 다섯 축 위에 올려 본 것입니다. 같은 피노 누아라도 바디는 중간, 산도는 높은 쪽, 탄닌은 낮은 쪽에 자리하는 식으로 — 한 와인이 축마다 각기 다른 위치를 가진다는 점이 핵심입니다.</figcaption>
+    </figure>
+
+    <h3>풍미란 무엇인가</h3>
+    <div class="prose">
+      <p>와인을 한 모금 마시고 "맛있다"고 느끼는 감각은 사실 혀 혼자만의 일이 아닙니다. <strong>풍미(Flavor)</strong>는 혀가 감지하는 맛(단맛 · 신맛 · 쓴맛), 코가 감지하는 향(아로마와 부케), 입안이 느끼는 질감(탄닌의 떫음, 탄산의 따끔거림, 바디의 무게감)이 한데 겹쳐진 종합적인 인상입니다. 지금까지 본 다섯 축은 주로 이 중 ‘질감과 맛’ 쪽을, 바로 아래에서 볼 1차 · 2차 · 3차 향은 ‘향’ 쪽을 설명합니다.</p>
+    </div>
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 560 320" role="img" aria-label="맛과 향, 질감 세 감각이 겹치는 가운데 지점이 풍미이며 4장에서 다룰 후비측 자극이 향과 맛을 잇는 통로가 된다">
+          <circle cx="220" cy="150" r="118" fill="var(--wine)" opacity=".16"></circle>
+          <circle cx="340" cy="150" r="118" fill="var(--gold)" opacity=".2"></circle>
+          <circle cx="280" cy="250" r="118" fill="currentColor" opacity=".08"></circle>
+          <circle cx="220" cy="150" r="118" fill="none" stroke="var(--wine)" stroke-width="1.2"></circle>
+          <circle cx="340" cy="150" r="118" fill="none" stroke="var(--gold)" stroke-width="1.2"></circle>
+          <circle cx="280" cy="250" r="118" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".6"></circle>
+
+          <text class="svgb" x="150" y="96" font-size="15" text-anchor="middle" fill="var(--wine)">맛</text>
+          <text class="svgt" x="150" y="114" font-size="11" text-anchor="middle" fill="currentColor" opacity=".7">혀 · 단맛 신맛 쓴맛</text>
+          <text class="svgb" x="410" y="96" font-size="15" text-anchor="middle" fill="var(--gold)">향</text>
+          <text class="svgt" x="410" y="114" font-size="11" text-anchor="middle" fill="currentColor" opacity=".7">코 · 아로마와 부케</text>
+          <text class="svgb" x="280" y="292" font-size="15" text-anchor="middle" fill="currentColor">질감</text>
+          <text class="svgt" x="280" y="309" font-size="11" text-anchor="middle" fill="currentColor" opacity=".7">입안 · 탄닌 탄산 바디</text>
+
+          <text class="svgb" x="280" y="176" font-size="17" text-anchor="middle" fill="currentColor">풍미</text>
+          <text class="svgt" x="280" y="194" font-size="10.5" text-anchor="middle" fill="currentColor" opacity=".75">Flavor</text>
+        </svg>
+      </div>
+      <figcaption>풍미는 맛 · 향 · 질감 세 감각이 입안에서 동시에 겹쳐진 결과입니다. 4장에서 다룰 <strong>후비측 자극(retronasal olfaction)</strong>이 바로 ‘향’과 ‘맛’을 코 안에서 이어 주는 통로입니다.</figcaption>
+    </figure>
+
+    <p class="dek">아래 품종표의 <strong>1차 · 2·3차 향</strong>이라는 말은 향이 생기는 세 단계를 가리킵니다. 포도 자체의 향에서 시작해, 발효와 숙성을 거치며 새로운 향이 덧붙습니다.</p>
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 740 190" role="img" aria-label="1차 향은 포도 자체에서, 2차 향은 발효 과정에서, 3차 향은 오크통 숙성에서 더해지며 세 향이 쌓여 한 잔의 부케를 이룬다">
+          <defs>
+            <marker id="ar5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <polygon points="0,1 10,5 0,9" fill="currentColor"></polygon>
+            </marker>
+          </defs>
+          <rect x="10" y="16" width="214" height="70" fill="var(--wine-tint)" stroke="var(--wine)" stroke-width="1.2"></rect>
+          <text class="svgb" x="24" y="40" font-size="13" fill="var(--wine)">1차 향 · 포도 품종</text>
+          <text class="svgt" x="24" y="58" font-size="12" fill="currentColor" opacity=".78">과일, 꽃 — 포도 자체의 향</text>
+          <text class="svgt" x="24" y="74" font-size="11" fill="currentColor" opacity=".6">예 : 블랙커런트, 체리, 풋사과</text>
+          <line x1="224" y1="51" x2="258" y2="51" stroke="currentColor" marker-end="url(#ar5)"></line>
+
+          <rect x="264" y="16" width="214" height="70" fill="none" stroke="currentColor"></rect>
+          <text class="svgb" x="278" y="40" font-size="13" fill="currentColor">2차 향 · 발효</text>
+          <text class="svgt" x="278" y="58" font-size="12" fill="currentColor" opacity=".78">효모가 더하는 향</text>
+          <text class="svgt" x="278" y="74" font-size="11" fill="currentColor" opacity=".6">예 : 빵, 버터, 요거트 뉘앙스</text>
+          <line x1="478" y1="51" x2="512" y2="51" stroke="currentColor" marker-end="url(#ar5)"></line>
+
+          <rect x="518" y="16" width="212" height="70" fill="none" stroke="currentColor"></rect>
+          <text class="svgb" x="532" y="40" font-size="13" fill="currentColor">3차 향 · 오크 숙성</text>
+          <text class="svgt" x="532" y="58" font-size="12" fill="currentColor" opacity=".78">나무통이 더하는 향</text>
+          <text class="svgt" x="532" y="74" font-size="11" fill="currentColor" opacity=".6">예 : 바닐라, 토스트, 담배</text>
+
+          <path d="M117 86 V110 C117 128 623 128 623 110 V86" fill="none" stroke="currentColor" opacity=".45"></path>
+          <path d="M370 128 V150" fill="none" stroke="currentColor" opacity=".45" marker-end="url(#ar5)"></path>
+          <rect x="250" y="156" width="240" height="30" fill="none" stroke="var(--gold)" stroke-width="1.2"></rect>
+          <text class="svgb" x="370" y="176" font-size="13" text-anchor="middle" fill="var(--gold)">세 향이 쌓여 한 잔의 ‘부케’가 된다</text>
+        </svg>
+      </div>
+      <figcaption>와인 시음 노트에 적힌 향은 세 겹으로 쌓여 있습니다. 포도 자체(1차), 발효(2차), 오크 숙성(3차) — 품종표의 두 향 칸은 이 순서를 그대로 따릅니다.</figcaption>
+    </figure>
+
+    <h3>주요 레드 품종 완전 정복</h3>
+    <p class="dek">전 세계 우수 레드 와인의 70% 이상이 아래 품종에서 나옵니다.</p>
+    <div class="tablewrap">
+      <table>
+        <caption>표 2-1. 주요 레드 품종의 향과 특징</caption>
+        <thead>
+          <tr><th scope="col">품종명</th><th scope="col">주요 생산지</th><th scope="col">1차 향 (포도 본연)</th><th scope="col">2·3차 향 (양조 · 오크)</th><th scope="col">바디 / 특징 요약</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">까베르네 쇼비뇽<small>Cabernet Sauvignon</small></th><td>프랑스 보르도, 미국 나파밸리, 칠레</td><td>블랙커런트, 블랙베리, 바이올렛(제비꽃)</td><td>연필심(흑연), 토스트, 담배, 마른 잎</td><td>묵직한 풀바디, 강한 탄닌. 스테이크의 영혼의 단짝</td></tr>
+          <tr><th scope="row">피노 누아<small>Pinot Noir</small></th><td>프랑스 부르고뉴 · 상파뉴, 미국 오리건</td><td>향수(꽃향기), 산딸기, 레드체리, 생동감 있는 산미</td><td>찻잎, 육두구, 흙냄새, 야생동물(가죽) 향</td><td>섬세하고 우아한 라이트~미디엄 바디</td></tr>
+          <tr><th scope="row">메를로<small>Merlot</small></th><td>프랑스 보르도, 미국 캘리포니아</td><td>블랙베리, 블랙 올리브, 잘 익은 자두(플럼)</td><td>연필 깎은 부스러기, 토스트</td><td>부드러운 탄닌과 과실미, 입문자에게 가장 친근함</td></tr>
+          <tr><th scope="row">시라 / 시라즈<small>Syrah / Shiraz</small></th><td>프랑스 론 밸리, 호주, 미국</td><td>흑후추(향신료), 블랙 프루트, 블루베리</td><td>바닐라, 커피, 훈연, 진한 농축미</td><td>스파이시하고 강렬한 풍미</td></tr>
+          <tr><th scope="row">산지오베제<small>Sangiovese</small></th><td>이탈리아 토스카나 (끼안티, 끼안티 클라시코)</td><td>블랙체리, 블랙베리, 바이올렛, 향신료</td><td>바닐라, 자두, 가죽, 흙내음</td><td>높은 산미와 짭조름한 감칠맛, 토마토 파스타와 찰떡궁합</td></tr>
+          <tr><th scope="row">네비올로<small>Nebbiolo</small></th><td>이탈리아 피에몬테 (바롤로, 바르바레스코)</td><td>자두, 산딸기, 트러플, 강렬한 산미</td><td>타르, 초콜릿, 마른 장미</td><td>옅은 색과 반전되는 강력한 탄닌과 산미</td></tr>
+          <tr><th scope="row">템프라니요<small>Tempranillo</small></th><td>스페인 리오하, 리베라 델 두에로</td><td>붉은 포도, 체리</td><td>담배, 가죽, 바닐라(미국 오크)</td><td>구수한 오크 향과 구조감</td></tr>
+          <tr><th scope="row">진판델 (프리미티보)<small>Zinfandel / Primitivo</small></th><td>미국 캘리포니아, 이탈리아 뿔리아</td><td>향신료, 잘 익은 딸기류, 체리</td><td>바닐라, 토스트, 버터스카치 캔디</td><td>잼처럼 진한 달콤한 과실 풍미와 높은 도수</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>알아두면 쓸데있는 기타 레드 품종</b> — 가메(프랑스 보졸레), 네로다볼라(이탈리아 시칠리아), 바르베라 · 돌체토(이탈리아), 말벡(아르헨티나 · 프랑스 카오르), 까르메네르(칠레), 가르나차 / 그르나슈(스페인 · 프랑스 론).</div>
+
+    <h3>주요 화이트 품종 완전 정복</h3>
+    <p class="dek">전 세계 우수 화이트 와인의 90% 이상이 아래 세 품종에서 나옵니다.</p>
+    <div class="tablewrap">
+      <table>
+        <caption>표 2-2. 주요 화이트 품종의 향과 스타일</caption>
+        <thead>
+          <tr><th scope="col">품종명</th><th scope="col">주요 생산지</th><th scope="col">1차 향 (포도 본연)</th><th scope="col">2·3차 향 (양조 · 오크)</th><th scope="col">스타일 요약</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">샤르도네 (샤도네이)<small>Chardonnay</small></th><td>프랑스 부르고뉴 · 상파뉴, 미국 캘리포니아, 호주</td><td>풋사과, 멜론, 배, 레몬</td><td><strong>스틸 숙성</strong> 깔끔한 미네랄<br><strong>오크 숙성</strong> 토스트, 버터, 오크, 감칠맛</td><td>양조 방식에 따라 천의 얼굴을 가진 품종</td></tr>
+          <tr><th scope="row">소비뇽 블랑<small>Sauvignon Blanc</small></th><td>프랑스 보르도 · 루아르, 뉴질랜드, 미국</td><td>갓 베어낸 풀 냄새, 토마토 줄기, 자몽, 시트러스, 허브</td><td>코코넛, 훈연, 바닐라 (오크 숙성 스타일의 경우)</td><td>코를 찌르는 듯한 상쾌한 허브와 감귤 향</td></tr>
+          <tr><th scope="row">리슬링<small>Riesling</small></th><td>독일, 프랑스 알자스, 미국 워싱턴, 호주</td><td>미네랄(젖은 돌), 시트러스, 열대과일, 짜릿한 산미</td><td>청사과, 페트롤(휘발유 뉘앙스)</td><td>드라이부터 극강의 스위트까지 모두 소화</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>알아두면 쓸데있는 기타 화이트 품종</b> — 게뷔르츠트라미너(리치 · 장미 향), 피노 그리지오 / 피노 그리(가볍고 산뜻함), 비오니에(복숭아 · 살구 향), 알바리뇨(스페인 해산물 와인), 슈냉 블랑(프랑스 루아르).</div>
+
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 760 470" role="img" aria-label="주요 품종을 바디 가벼움에서 무거움 순으로 배치한 도표. 피노 누아가 가장 가볍고 까베르네 쇼비뇽이 가장 묵직하며, 샤르도네는 양조 방식에 따라 폭이 넓다">
+          <!-- 축 -->
+          <text class="svgm" x="190" y="30" font-size="11.5" letter-spacing=".1em" fill="currentColor" opacity=".6">바디</text>
+          <line x1="190" y1="54" x2="620" y2="54" stroke="currentColor" stroke-width="1" opacity=".35"></line>
+          <text class="svgm" x="233" y="46" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".6">라이트</text>
+          <text class="svgm" x="405" y="46" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".6">미디엄</text>
+          <text class="svgm" x="577" y="46" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".6">풀</text>
+          <text class="svgm" x="648" y="46" font-size="11.5" fill="currentColor" opacity=".6">당도</text>
+          <g stroke="currentColor" opacity=".18">
+            <line x1="233" y1="54" x2="233" y2="446"></line>
+            <line x1="405" y1="54" x2="405" y2="446"></line>
+            <line x1="577" y1="54" x2="577" y2="446"></line>
+          </g>
+          <!-- 레드 그룹 -->
+          <text class="svgm" x="20" y="84" font-size="11.5" letter-spacing=".16em" fill="var(--wine)">레드</text>
+          <g font-size="14" fill="currentColor">
+            <text class="svgt" x="178" y="116" text-anchor="end">피노 누아</text><circle cx="298" cy="112" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="116" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="148" text-anchor="end">산지오베제</text><circle cx="384" cy="144" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="148" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="180" text-anchor="end">템프라니요</text><circle cx="448" cy="176" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="180" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="212" text-anchor="end">네비올로</text><circle cx="457" cy="208" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="212" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="244" text-anchor="end">메를로</text><circle cx="457" cy="240" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="244" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="276" text-anchor="end">진판델</text><circle cx="543" cy="272" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="276" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="308" text-anchor="end">시라 / 시라즈</text><circle cx="556" cy="304" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="308" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="340" text-anchor="end">까베르네 쇼비뇽</text><circle cx="577" cy="336" r="6" fill="var(--wine)"></circle><text class="svgm" x="648" y="340" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+          </g>
+          <!-- 화이트 그룹 -->
+          <line x1="20" y1="360" x2="740" y2="360" stroke="currentColor" opacity=".25"></line>
+          <text class="svgm" x="20" y="386" font-size="11.5" letter-spacing=".16em" fill="var(--gold)">화이트</text>
+          <g font-size="14" fill="currentColor">
+            <text class="svgt" x="178" y="390" text-anchor="end">리슬링</text><circle cx="298" cy="386" r="6" fill="var(--gold)"></circle><text class="svgm" x="648" y="390" font-size="12" fill="currentColor" opacity=".7">드라이~스위트</text>
+            <text class="svgt" x="178" y="418" text-anchor="end">소비뇽 블랑</text><circle cx="328" cy="414" r="6" fill="var(--gold)"></circle><text class="svgm" x="648" y="418" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+            <text class="svgt" x="178" y="446" text-anchor="end">샤르도네</text>
+            <line x1="362" y1="442" x2="556" y2="442" stroke="var(--gold)" stroke-width="3"></line>
+            <circle cx="457" cy="442" r="6" fill="var(--gold)"></circle>
+            <text class="svgm" x="648" y="446" font-size="12" fill="currentColor" opacity=".7">드라이</text>
+          </g>
+          <text class="svgm" x="362" y="462" font-size="11" fill="currentColor" opacity=".6">스틸 숙성 ← 오크 숙성 →</text>
+        </svg>
+      </div>
+      <figcaption>품종별 바디를 한 줄에 세운 비교표입니다. 샤르도네만 점 대신 막대로 표시한 것은, 같은 품종이라도 스틸 탱크냐 오크통이냐에 따라 바디가 라이트에서 풀까지 움직이기 때문입니다.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= 3장 ================= -->
+  <section id="ch3">
+    <span class="chno">3장</span>
+    <h2 class="ch">와인 라벨 해독기 : 구대륙 vs 신대륙</h2>
+    <p class="dek">와인 라벨은 크게 유럽 중심의 구대륙과 비유럽권 신대륙, 두 가지 문법으로 나뉩니다. 어느 문법으로 쓰인 라벨인지만 알아보면 나머지는 읽힙니다.</p>
+
+    <div class="tablewrap">
+      <table>
+        <caption>표 3-1. 구대륙과 신대륙 라벨 문법 비교</caption>
+        <thead>
+          <tr><th scope="col"><strong>구분</strong></th><th scope="col">🏛️ <strong>구대륙</strong> (Old World)</th><th scope="col">🗽 <strong>신대륙</strong> (New World)</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">대표 국가</th><td>프랑스, 이탈리아, 스페인, 독일 등</td><td>미국, 칠레, 호주, 뉴질랜드 등</td></tr>
+          <tr><th scope="row">핵심 정보</th><td>‘<strong>생산 지역</strong>(원산지)’ 강조</td><td>‘<strong>포도 품종</strong>’ 전면 표기</td></tr>
+          <tr><th scope="row">특징</th><td>품종이 생략된 경우가 많아 지역명을 보고 품종을 유추해야 함</td><td>라벨만 보고도 맛을 직관적으로 쉽게 예측할 수 있음 <strong>(초보자 추천)</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="pull">구대륙은 지역이 곧 정체성입니다. “어디서 자랐는가”가 “무엇을 심었는가”보다 중요하게 여겨집니다. 신대륙은 품종이 곧 정체성입니다. 라벨의 품종명만 읽어도 입안에서 느껴질 맛을 미리 그릴 수 있습니다.</p>
+
+    <div class="prose">
+      <p>왜 이렇게 다를까요? 구대륙은 수백 년에 걸쳐 "이 언덕에서 나는 포도는 이런 맛"이라는 공식을 국가가 법(원산지 통제 명칭 제도)으로 보증해 온 역사가 있습니다. 그래서 라벨에는 그 땅의 이름만 적어도 충분했고, 오히려 품종을 적는 쪽이 어색하게 여겨지기도 합니다. 반면 신대륙은 역사가 비교적 짧은 대신 한 나라 안에서도 다양한 포도밭과 품종을 실험적으로 재배해 왔습니다. 처음 보는 와인 앞에서 소비자가 망설이지 않도록, 지역 이름보다 포도 품종을 라벨 맨 앞에 내세우는 쪽을 택한 것입니다.</p>
+    </div>
+
+    <h3>실전 라벨 비교 분석</h3>
+    <div class="labelphotos">
+      <figure>
+        <img src="bottles/pomies.png" alt="샤또 포미에 아가삭 오-메독 와인 라벨 실제 사진" loading="lazy" width="340" height="660">
+        <figcaption><b>Château Pomiès-Agassac</b>프랑스 · 오-메독 (구대륙)</figcaption>
+      </figure>
+      <figure>
+        <img src="bottles/kj-chardonnay.png" alt="켄달 잭슨 빈트너스 리저브 샤르도네 캘리포니아 와인 라벨 실제 사진" loading="lazy" width="340" height="660">
+        <figcaption><b>Kendall-Jackson Chardonnay</b>미국 · 캘리포니아 (신대륙)</figcaption>
+      </figure>
+    </div>
+    <p class="dek">실제 라벨을 나란히 두면 차이가 한눈에 보입니다 — 왼쪽은 품종이 한 글자도 없고, 오른쪽은 품종명이 라벨 중앙을 차지합니다. 각 항목이 무엇을 말하는지는 아래 구조도에서 짚어 보겠습니다.</p>
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 760 390" role="img" aria-label="구대륙 보르도 라벨은 생산자와 지역, 빈티지만 적혀 있고 품종이 없으며, 신대륙 캘리포니아 라벨은 생산자, 빈티지, 포도 품종, 지역이 모두 적혀 있다">
+          <text class="svgb" x="30" y="26" font-size="13" fill="var(--wine)">🏛️ 구대륙 — 프랑스 보르도</text>
+          <text class="svgb" x="460" y="26" font-size="13" fill="var(--wine)">🗽 신대륙 — 미국 캘리포니아</text>
+
+          <!-- 구대륙 라벨 -->
+          <rect x="30" y="44" width="168" height="292" fill="var(--surface)" stroke="currentColor"></rect>
+          <rect x="36" y="50" width="156" height="280" fill="none" stroke="currentColor" opacity=".3"></rect>
+          <text class="svgt" x="114" y="98" font-size="12" letter-spacing="2.4" text-anchor="middle" fill="currentColor">CHÂTEAU</text>
+          <text class="svgb" x="114" y="120" font-size="13" letter-spacing=".4" text-anchor="middle" fill="currentColor">POMIES-AGASSAC</text>
+          <line x1="64" y1="136" x2="164" y2="136" stroke="currentColor" opacity=".45"></line>
+          <text class="svgt" x="114" y="198" font-size="13" letter-spacing="1.6" text-anchor="middle" fill="currentColor">HAUT-MÉDOC</text>
+          <text class="svgm" x="114" y="252" font-size="15.5" text-anchor="middle" fill="currentColor">2007</text>
+          <text class="svgt" x="114" y="318" font-size="8.5" letter-spacing="1" text-anchor="middle" fill="currentColor" opacity=".6">MIS EN BOUTEILLE AU CHÂTEAU</text>
+          <g stroke="var(--wine)" stroke-width="1">
+            <line x1="198" y1="112" x2="236" y2="112"></line>
+            <line x1="198" y1="194" x2="236" y2="194"></line>
+            <line x1="198" y1="248" x2="236" y2="248"></line>
+          </g>
+          <text class="svgb" x="242" y="116" font-size="13" fill="currentColor">생산자 이름</text>
+          <text class="svgb" x="242" y="190" font-size="13" fill="currentColor">생산 지역</text>
+          <text class="svgt" x="242" y="206" font-size="11.5" fill="currentColor" opacity=".7">프랑스 › 보르도</text>
+          <text class="svgt" x="242" y="220" font-size="11.5" fill="currentColor" opacity=".7">› 메독 › 오-메독</text>
+          <text class="svgb" x="242" y="244" font-size="13" fill="currentColor">빈티지</text>
+          <text class="svgt" x="242" y="260" font-size="11.5" fill="currentColor" opacity=".7">포도 수확 연도</text>
+          <text class="svgt" x="242" y="300" font-size="11.5" fill="var(--wine)">💡 품종 표기 없음</text>
+          <text class="svgt" x="242" y="316" font-size="11.5" fill="currentColor" opacity=".7">보르도 좌안(메독)</text>
+          <text class="svgt" x="242" y="330" font-size="11.5" fill="currentColor" opacity=".7">→ 까베르네 + 메를로</text>
+
+          <!-- 신대륙 라벨 -->
+          <rect x="460" y="44" width="168" height="292" fill="var(--surface)" stroke="currentColor"></rect>
+          <text class="svgb" x="544" y="108" font-size="12.5" letter-spacing=".3" text-anchor="middle" fill="currentColor">KENDALL-JACKSON</text>
+          <text class="svgt" x="544" y="123" font-size="9" letter-spacing="1.2" text-anchor="middle" fill="currentColor" opacity=".7">VINTNER’S RESERVE</text>
+          <line x1="496" y1="140" x2="592" y2="140" stroke="currentColor" opacity=".45"></line>
+          <text class="svgm" x="544" y="188" font-size="14.5" text-anchor="middle" fill="currentColor">2022</text>
+          <text class="svgb" x="544" y="240" font-size="15.5" letter-spacing="1" text-anchor="middle" fill="currentColor">CHARDONNAY</text>
+          <text class="svgt" x="544" y="296" font-size="11.5" letter-spacing="2" text-anchor="middle" fill="currentColor" opacity=".75">CALIFORNIA</text>
+          <g stroke="var(--wine)" stroke-width="1">
+            <line x1="628" y1="114" x2="660" y2="114"></line>
+            <line x1="628" y1="184" x2="660" y2="184"></line>
+            <line x1="628" y1="236" x2="660" y2="236"></line>
+            <line x1="628" y1="292" x2="660" y2="292"></line>
+          </g>
+          <text class="svgb" x="666" y="118" font-size="12.5" fill="currentColor">생산자</text>
+          <text class="svgb" x="666" y="188" font-size="12.5" fill="currentColor">빈티지</text>
+          <text class="svgb" x="666" y="240" font-size="12.5" fill="var(--wine)">포도 품종</text>
+          <text class="svgb" x="666" y="296" font-size="12.5" fill="currentColor">생산 지역</text>
+        </svg>
+      </div>
+      <figcaption>같은 정보량의 라벨이 아닙니다. 왼쪽 보르도 라벨에는 품종이 한 글자도 없고, 오른쪽 캘리포니아 라벨은 품종을 가장 크게 읽히도록 적어 둡니다. 구대륙 라벨은 지역명이 품종표 역할을 대신합니다.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= 4장 ================= -->
+  <section id="ch4">
+    <span class="chno">4장</span>
+    <h2 class="ch">실전 와인 테이스팅 : 오감 매뉴얼</h2>
+    <p class="dek">와인을 ‘맛본다’고 말하지만, 실제로 일어나는 일의 대부분은 코에서 벌어집니다. 왜 그런지 알면 테이스팅 순서가 외울 것이 아니라 이해할 것이 됩니다.</p>
+
+    <h3>왜 코로 맛을 느낄까 — 후각과 미각의 과학</h3>
+    <div class="prose">
+      <p>와인을 마실 때 맛을 느끼는 과정은 우리 몸의 미각 · 후각 · 촉각이 동시에 상호작용하는 생리학적 현상입니다. 다만 와인은 성분이 복합적이고, 스월링 · 향 맡기처럼 그 감각을 일부러 극대화하는 시음 방식을 쓰기 때문에 이 반응이 유난히 또렷하게 느껴집니다. 삼키는 순간까지 몸 안에서 실제로 일어나는 일을 다섯 단계로 풀어 보면 이렇습니다.</p>
+    </div>
+
+    <figure>
+      <div class="figframe">
+        <img src="bottles/wine-taste.gif" alt="사람 머리 단면도로 본 와인 시음 시 맛을 느끼는 원리. 전비강 후각, 혀의 미각, 입안의 삼차신경 촉각, 목 뒤로 올라오는 후비강 후각, 뇌에서의 풍미 통합까지 번호 순서로 보여주는 그림" loading="lazy" width="1024" height="765" style="display:block;width:100%;height:auto">
+      </div>
+      <figcaption>머리 단면 안에서 코·혀·신경이 동시에 작동하는 모습을 번호 순서로 담았습니다. ★로 표시한 ④ ‘목 뒤로 올라오는 향(후비강 후각)’이 ‘풍미’ 대부분을 만드는 핵심 경로이고, ⑤에서 그 모든 신호가 뇌로 모여 하나의 풍미로 통합됩니다.</figcaption>
+    </figure>
+
+    <ol class="checklist">
+      <li><b>시각 — 뇌의 사전 인지</b><span>잔에 따른 와인의 빛깔과 점성(눈물)을 보는 순간, 뇌는 이미 과거의 기억을 되살려 어떤 향과 맛이 날지 미리 그려 봅니다. 이 시각 정보만으로도 침샘과 소화 효소 분비가 촉진되어, 맛 분자가 입안에서 더 잘 녹아 퍼지도록 몸이 미리 준비를 끝냅니다.</span></li>
+      <li><b>전비강 후각 — 직접 향 맡기 (Orthonasal)</b><span>잔을 돌리면(스월링) 와인 속 휘발성 향기 입자가 공기 중으로 날아오르고, 코로 들이마시는 순간 콧속 윗부분의 후각 상피에 있는 수용체와 결합합니다. 과일 · 꽃 · 오크 같은 향의 1차 정보가 이렇게 가장 먼저 뇌의 대뇌변연계(감정과 기억을 담당하는 부위)로 전달됩니다.</span></li>
+      <li><b>입안의 미각과 촉각</b><span>한 모금 머금고 입안 전체로 굴리면 혀와 점막이 본격적으로 움직입니다. 혀는 신맛(2장의 산도) · 단맛(당도) · 쓴맛을 감지하고 — 와인에서 짠맛 · 감칠맛은 거의 느껴지지 않습니다 — 동시에 삼차신경이라는 별도의 감각이 작동합니다. 탄닌은 침 속 단백질과 엉겨 붙어 입안을 마르게 하는 떫은 촉감을 만들고, 알코올은 입안의 온도 수용체를 자극해 실제 온도 변화 없이도 따뜻한 열감과 묵직한 바디감을 느끼게 합니다.</span></li>
+      <li><b>후비강 후각 — 풍미의 완성 (Retronasal) ★</b><span>와인을 머금은 채 공기를 살짝 빨아들이거나 삼킨 뒤 코로 숨을 내쉬면, 입안의 온도로 데워진 휘발성 향 성분이 목구멍 뒤쪽을 거슬러 올라가 코의 후각 세포에 다시 닿습니다. 이 후비강 후각이 혀의 맛, 입안의 촉감과 실시간으로 뒤섞이면서 뇌는 비로소 이 모든 것을 ‘체리 맛’, ‘바닐라 맛’ 같은 하나의 복합적인 풍미로 완성해 인지합니다. 가장 중요한 단계이자, 우리가 ‘맛있다’고 느끼는 감각의 대부분이 실제로 만들어지는 곳입니다.</span></li>
+      <li><b>피니시 — 여운</b><span>삼키거나 뱉은 뒤에도 혀와 목 점막에 남은 비휘발성 성분(탄닌 · 산 등)과 계속 증발하는 향 입자가 한동안 감각을 자극합니다. 이 여운이 얼마나 길고 복잡하게 이어지는지가 와인의 품질을 가늠하는 중요한 잣대가 됩니다.</span></li>
+    </ol>
+
+    <div class="note"><b>정리하면</b> — 와인 시음은 혀 하나의 일이 아닙니다. 온도에 데워져 기화된 향 입자가 목 뒤로 올라가 코를 자극하는 <strong>후비강 후각</strong>과, 탄닌이 입안을 마르게 하는 <strong>촉각적 자극</strong>이 혀의 미각과 뒤섞여 뇌 속에서 하나의 ‘풍미’로 완성되는 과학적 과정입니다. 혀는 기본 맛 5가지만 감지하지만, 코는 10만여 종의 냄새를 구분합니다.</div>
+
+    <figure class="photo">
+      <div class="frame"><img src="bottles/swirl.jpg" alt="잔을 들어 빛에 비춰 보며 레드 와인의 색과 향을 살피는 실제 사진" loading="lazy" width="900" height="1350"></div>
+      <figcaption>잔을 기울여 빛을 투과시키면 색의 짙기와 테두리 색조가 또렷하게 드러납니다. 1단계 ‘색깔 보기’의 실제 모습입니다.</figcaption>
+    </figure>
+
+    <h3>와인 테이스팅 5단계 체크리스트</h3>
+    <ol class="steps">
+      <li><b>색깔 보기 (Look)</b><span>흰색 냅킨이나 테이블을 배경으로 잔을 45° 기울여 색의 짙기와 테두리 색상을 관찰합니다. 숙성될수록 레드는 벽돌색으로, 화이트는 진한 호박색으로 변합니다.</span></li>
+      <li><b>스월링 (Swirl)</b><span>잔의 받침(베이스)을 잡고 가볍게 원을 그리며 돌립니다. 와인이 산소와 접촉하면서 잠자고 있던 아로마(포도 향)와 부케(숙성 향)가 깨어납니다.</span></li>
+      <li><b>냄새 맡기 (Smell)</b><span>테이스팅에서 가장 중요한 단계입니다. 잔 속에 코를 깊이 넣고 과일, 꽃, 허브, 나무, 향신료 중 어떤 이미지가 떠오르는지 집중합니다.</span></li>
+      <li><b>맛보기 (Taste)</b><span>한 모금 머금고 입안 전체를 헹구듯 굴려 후비측 자극을 극대화합니다. 레드 와인은 잇몸과 혀를 조이는 탄닌의 질감(거친지, 실크처럼 부드러운지)에, 화이트 와인은 혀 양옆에 침이 고이게 하는 산도의 짜릿함에 집중하세요.</span></li>
+      <li><b>음미하기 (Savor)</b><span>삼킨 후 입안에 향이 얼마나 오래 남는지(피니시 / 여운) 체크하고, 어떤 음식과 곁들이면 좋을지 상상해 봅니다.</span></li>
+    </ol>
+  </section>
+
+  <!-- ================= 5장 ================= -->
+  <section id="ch5">
+    <span class="chno">5장</span>
+    <h2 class="ch">실전 테이스팅 노트 : 추천 와인 3종</h2>
+    <p class="dek">입문자가 스타일별 특징을 명확히 비교하며 경험할 수 있도록 엄선된 3가지 대표 와인입니다. 스파클링 → 화이트 → 레드 순으로 마시면 세 와인의 산미와 질감 차이가 가장 잘 드러납니다. 각 카드의 다섯 축 평가는 2장에서 본 <strong>바디감 · 탄산 · 당도 · 산도 · 탄닌</strong>을 이 세 와인에 그대로 적용해 본 것입니다.</p>
+
+    <article class="winecard">
+      <div class="wc-head">
+        <div class="wc-text">
+          <span class="wno">01 · 스파클링 와인</span>
+          <h3>쿠바제 블랑 드 블랑 NV</h3>
+          <p class="orig">Cuvage Blanc de Blancs NV</p>
+          <p class="tagline">“이탈리아의 자부심, 샴페인을 압도하는 정교한 화이트 버블”</p>
+        </div>
+        <figure class="bottle-shot">
+          <div class="mat"><img src="bottles/cuvage.png" alt="쿠바제 블랑 드 블랑 NV 실제 병 사진" loading="lazy" width="340" height="660"></div>
+          <figcaption>실제 제품 사진</figcaption>
+        </figure>
+      </div>
+      <dl class="spec">
+        <div><dt>생산지 / 생산자</dt><dd>이탈리아 › 피에몬테 / 쿠바제 (Cuvage)</dd></div>
+        <div><dt>품종 / 빈티지</dt><dd>샤르도네 100% / NV <span style="opacity:.7">(여러 해의 원액을 블렌딩)</span></dd></div>
+        <div><dt>알코올 / 양조</dt><dd>12% / 샴페인과 동일한 전통 방식 (병 내 1 · 2차 발효)</dd></div>
+        <div><dt>평점</dt><dd>James Suckling 91 · Falstaff 91 · Decanter 90 · Vivino 3.9</dd></div>
+        <div><dt>시중가</dt><dd>해외 소매가 기준 US$20대 초반 <span style="opacity:.7">(국내 가격은 수입사·매장별로 다름)</span></dd></div>
+      </dl>
+      <dl class="profile">
+        <div><dt>색상</dt><dd>연한 황금빛과 섬세하게 피어오르는 기포</dd></div>
+        <div><dt>향</dt><dd>갓 구운 브리오슈(고소한 빵), 아몬드, 상큼한 레몬, 화이트 플라워</dd></div>
+        <div><dt>맛</dt><dd>부드럽고 미세한 기포감, 강렬한 미네랄리티, 우아하고 깔끔한 산미의 완벽한 조화</dd></div>
+      </dl>
+      <dl class="rating">
+        <div class="rrow"><dt class="rlabel">바디감</dt><dd><span class="pips" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd><dd class="rhint">라이트~미디엄</dd></div>
+        <div class="rrow"><dt class="rlabel">탄산</dt><dd><span class="pips" role="img" aria-label="5점 중 5점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></dd><dd class="rhint">전통 방식의 섬세하고 지속적인 기포</dd></div>
+        <div class="rrow"><dt class="rlabel">당도</dt><dd><span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd><dd class="rhint">브뤼(Brut), 드라이</dd></div>
+        <div class="rrow"><dt class="rlabel">산도</dt><dd><span class="pips" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd><dd class="rhint">우아하고 깔끔한 산미</dd></div>
+        <div class="rrow"><dt class="rlabel">탄닌</dt><dd><span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd><dd class="rhint">거의 없음 (화이트 품종)</dd></div>
+      </dl>
+      <p class="pairing"><b>🍽️ 추천 음식 매칭</b>신선한 생굴, 해산물 플래터, 초밥(스시), 가벼운 크림 파스타, 식전주</p>
+    </article>
+
+    <article class="winecard">
+      <div class="wc-head">
+        <div class="wc-text">
+          <span class="wno">02 · 화이트 와인</span>
+          <h3>고뜨홍 샤블리 2021</h3>
+          <p class="orig">Gautheron Chablis 2021</p>
+          <p class="tagline">“순수한 미네랄의 결정체, 7대를 이어온 정통 샤블리의 자부심”</p>
+        </div>
+        <figure class="bottle-shot">
+          <div class="mat"><img src="bottles/gautheron.png" alt="고뜨홍 샤블리 2021 실제 병 사진" loading="lazy" width="340" height="660"></div>
+          <figcaption>실제 제품 사진</figcaption>
+        </figure>
+      </div>
+      <dl class="spec">
+        <div><dt>생산지 / 생산자</dt><dd>프랑스 › 부르고뉴 › 샤블리 / 도멘 고뜨홍 (Gautheron)</dd></div>
+        <div><dt>품종 / 빈티지</dt><dd>샤르도네 100% / 2021</dd></div>
+        <div><dt>알코올 / 양조</dt><dd>12.5% / 오크통 미사용, 스테인리스 탱크 저온 발효 및 10개월 숙성</dd></div>
+        <div><dt>평점</dt><dd>Decanter 91 · James Suckling 90 · Tim Atkin 90 · Vivino 3.9</dd></div>
+        <div><dt>시중가</dt><dd>해외 소매가 기준 US$30~40대 <span style="opacity:.7">(국내 가격은 수입사·매장별로 다름)</span></dd></div>
+      </dl>
+      <dl class="profile">
+        <div><dt>색상</dt><dd>연한 금빛과 살짝 감도는 싱그러운 초록빛</dd></div>
+        <div><dt>향</dt><dd>풋사과, 레몬 제스트, 흰 꽃의 화사함 + 젖은 돌(미네랄), 갓 깎은 풀 향</dd></div>
+        <div><dt>맛</dt><dd>혀끝을 자극하는 짜릿한 산도와 입안에 남는 짭조름한 미네랄 여운의 정석</dd></div>
+      </dl>
+      <dl class="rating">
+        <div class="rrow"><dt class="rlabel">바디감</dt><dd><span class="pips" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd><dd class="rhint">라이트~미디엄</dd></div>
+        <div class="rrow"><dt class="rlabel">탄산</dt><dd><span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd><dd class="rhint">없음 (스틸 와인)</dd></div>
+        <div class="rrow"><dt class="rlabel">당도</dt><dd><span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd><dd class="rhint">드라이</dd></div>
+        <div class="rrow"><dt class="rlabel">산도</dt><dd><span class="pips" role="img" aria-label="5점 중 5점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></dd><dd class="rhint">샤블리 특유의 짜릿한 산도</dd></div>
+        <div class="rrow"><dt class="rlabel">탄닌</dt><dd><span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd><dd class="rhint">거의 없음 (화이트 품종)</dd></div>
+      </dl>
+      <p class="pairing"><b>🍽️ 추천 음식 매칭</b>석화(생굴), 해산물 샤브샤브, 흰 살 생선회, 레몬 치킨 샐러드</p>
+    </article>
+
+    <article class="winecard">
+      <div class="wc-head">
+        <div class="wc-text">
+          <span class="wno">03 · 레드 와인</span>
+          <h3>도멘 드 까후 상세르 루즈 2018</h3>
+          <p class="orig">Domaine du Carrou Sancerre Rouge 2018</p>
+          <p class="tagline">“부르고뉴가 질투하는 상세르의 보석, 피노 누아의 정교하고 우아한 변신”</p>
+        </div>
+        <figure class="bottle-shot">
+          <div class="mat"><img src="bottles/carrou.png" alt="도멘 드 까후 상세르 루즈 실제 병 사진" loading="lazy" width="340" height="660"></div>
+          <figcaption>실제 제품 사진</figcaption>
+        </figure>
+      </div>
+      <dl class="spec">
+        <div><dt>생산지 / 생산자</dt><dd>프랑스 › 루아르 › 상세르 / 도멘 드 까후 (Domaine du Carrou)</dd></div>
+        <div><dt>품종 / 빈티지</dt><dd>피노 누아 100% / 2018</dd></div>
+        <div><dt>알코올 / 양조</dt><dd>13% / 천연 효모 발효, 프랑스산 오크통 숙성</dd></div>
+        <div><dt>평점</dt><dd>Wine Spectator 90 · Wine Enthusiast 89 · Vivino 3.9</dd></div>
+        <div><dt>시중가</dt><dd>해외 소매가 기준 US$30대 중후반 <span style="opacity:.7">(국내 가격은 수입사·매장별로 다름)</span></dd></div>
+      </dl>
+      <dl class="profile">
+        <div><dt>색상</dt><dd>투명하고 맑은 루비 빛깔</dd></div>
+        <div><dt>향</dt><dd>체리, 라즈베리, 산딸기의 신선한 붉은 과실 향 + 은은한 향신료, 흑연, 토양의 뉘앙스</dd></div>
+        <div><dt>맛</dt><dd>생동감 있는 산미와 실크처럼 부드러운 탄닌, 깔끔하고 우아하게 이어지는 긴 여운</dd></div>
+      </dl>
+      <dl class="rating">
+        <div class="rrow"><dt class="rlabel">바디감</dt><dd><span class="pips" role="img" aria-label="5점 중 3점"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></dd><dd class="rhint">미디엄</dd></div>
+        <div class="rrow"><dt class="rlabel">탄산</dt><dd><span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd><dd class="rhint">없음 (스틸 와인)</dd></div>
+        <div class="rrow"><dt class="rlabel">당도</dt><dd><span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></dd><dd class="rhint">드라이</dd></div>
+        <div class="rrow"><dt class="rlabel">산도</dt><dd><span class="pips" role="img" aria-label="5점 중 4점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></dd><dd class="rhint">생동감 있는 산미</dd></div>
+        <div class="rrow"><dt class="rlabel">탄닌</dt><dd><span class="pips" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></dd><dd class="rhint">실크처럼 부드러움 (피노 누아 특유)</dd></div>
+      </dl>
+      <p class="pairing"><b>🍽️ 추천 음식 매칭</b>구운 닭요리, 참치 타다키, 가벼운 육회, 버섯 리조또, 숙성 치즈</p>
+    </article>
+  </section>
+
+  <!-- ================= 6장 ================= -->
+  <section id="ch6">
+    <span class="chno">6장</span>
+    <h2 class="ch">와인 보관 마스터 : 온도 · 습도 · 남은 와인</h2>
+    <p class="dek">와인을 망치는 가장 흔한 범인은 코르크가 아니라 온도입니다. 보관 온도에는 안전 구간과 위험 구간이 분명히 나뉘어 있습니다.</p>
+
+    <figure class="photo wide">
+      <div class="frame"><img src="bottles/cellar.jpg" alt="나무 선반에 눕혀 보관된 와인 병들의 실제 저장고 사진" loading="lazy" width="900" height="1350"></div>
+      <figcaption>직사광선을 피해 서늘하게, 코르크가 마르지 않도록 눕혀서. 이상적인 보관 환경의 조건이 한 장에 담겨 있습니다.</figcaption>
+    </figure>
+
+    <h3>와인 저장 온도별 위험도 신호등</h3>
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 760 186" role="img" aria-label="와인 보관 온도 눈금. 영하 11도 이하는 동결 위험, 4.4도 이하는 저온 주의, 12에서 15도가 최적, 21.1도 이상은 고온 주의, 32.2도 이상은 열화 위험">
+          <g stroke="none">
+            <rect x="70" y="72" width="14" height="40" fill="#1E3A6E"></rect>
+            <rect x="84" y="72" width="218" height="40" fill="#4E82B8"></rect>
+            <rect x="302" y="72" width="107" height="40" fill="#AFC4D2"></rect>
+            <rect x="409" y="72" width="43" height="40" fill="#2E6B45"></rect>
+            <rect x="452" y="72" width="86" height="40" fill="#A6B79C"></rect>
+            <rect x="538" y="72" width="157" height="40" fill="#D4972F"></rect>
+            <rect x="695" y="72" width="25" height="40" fill="#B3301F"></rect>
+          </g>
+          <rect x="70" y="72" width="650" height="40" fill="none" stroke="currentColor" opacity=".5"></rect>
+          <!-- 구간 이름 -->
+          <text class="svgb" x="193" y="62" font-size="13" text-anchor="middle" fill="currentColor">⚠️ 저온 주의</text>
+          <text class="svgt" x="355" y="62" font-size="12.5" text-anchor="middle" fill="currentColor" opacity=".7">단기 보관</text>
+          <text class="svgb" x="616" y="62" font-size="13" text-anchor="middle" fill="currentColor">⚠️ 고온 주의</text>
+          <line x1="430" y1="42" x2="430" y2="70" stroke="currentColor"></line>
+          <text class="svgb" x="430" y="34" font-size="13" text-anchor="middle" fill="var(--wine)">✅ 최적 12–15°C</text>
+          <line x1="84" y1="42" x2="84" y2="70" stroke="currentColor"></line>
+          <text class="svgt" x="84" y="34" font-size="12.5" text-anchor="middle" fill="currentColor">❄️ 동결</text>
+          <line x1="707" y1="42" x2="707" y2="70" stroke="currentColor"></line>
+          <text class="svgt" x="707" y="34" font-size="12.5" text-anchor="middle" fill="currentColor">🔥 열화</text>
+          <!-- 눈금 -->
+          <g stroke="currentColor" opacity=".7">
+            <line x1="84" y1="112" x2="84" y2="120"></line>
+            <line x1="302" y1="112" x2="302" y2="120"></line>
+            <line x1="409" y1="112" x2="409" y2="120"></line>
+            <line x1="452" y1="112" x2="452" y2="120"></line>
+            <line x1="538" y1="112" x2="538" y2="120"></line>
+            <line x1="695" y1="112" x2="695" y2="120"></line>
+          </g>
+          <g class="svgm" font-size="12" fill="currentColor" text-anchor="middle">
+            <text x="84" y="136">−11</text>
+            <text x="302" y="136">4.4</text>
+            <text x="409" y="136">12</text>
+            <text x="452" y="136">15</text>
+            <text x="538" y="136">21.1</text>
+            <text x="695" y="136">32.2</text>
+          </g>
+          <text class="svgm" x="732" y="136" font-size="12" fill="currentColor" opacity=".7">°C</text>
+          <text class="svgm" x="70" y="168" font-size="11.5" fill="currentColor" opacity=".7">최적 구간에서는 습도 55~75% 유지 · 직사광선 차단 필수</text>
+        </svg>
+      </div>
+      <figcaption>일반 냉장고(약 3~4°C)는 와인의 장기 보관 장소가 아닙니다. 눈금 왼쪽의 저온 구간에서는 주석산염 결정이 석출될 수 있고, 오른쪽 21.1°C를 넘으면 숙성 속도가 두 배 이상 빨라져 수명이 짧아집니다.</figcaption>
+    </figure>
+
+    <div class="tablewrap">
+      <table>
+        <caption>표 6-1. 저장 온도 구간별 상태 신호</caption>
+        <thead><tr><th scope="col">온도 구간</th><th scope="col">신호</th><th scope="col">의미</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" class="num">-11°C 이하</th><td class="sig">❄️ 동결 위험</td><td>와인이 얼어 병이 깨지거나 코르크가 밀려남</td></tr>
+          <tr><th scope="row" class="num">4.4°C 이하</th><td class="sig">⚠️ 저온 주의</td><td>일반 냉장고 장기 보관 금지! 주석산염 결정 석출 가능</td></tr>
+          <tr><th scope="row" class="num">12°C ~ 15°C</th><td class="sig">✅ 최적의 보관 온도</td><td>습도 55~75%, 직사광선 차단 필수</td></tr>
+          <tr><th scope="row" class="num">21.1°C 이상</th><td class="sig">⚠️ 고온 주의</td><td>숙성 속도가 2배 이상 빨라져 수명 단축</td></tr>
+          <tr><th scope="row" class="num">32.2°C 이상</th><td class="sig">🔥 열화 위험</td><td>와인이 익어버려 식초처럼 변질됨</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>마시고 남은 와인, 며칠까지 괜찮을까</h3>
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 760 330" role="img" aria-label="남은 와인의 보관 가능 기간. 스파클링 1에서 3일, 가벼운 화이트와 로제 5에서 7일, 풀바디 화이트 3에서 5일, 레드 상온 3에서 5일, 레드 냉장 5에서 7일, 주정강화 최대 28일">
+          <g stroke="currentColor" opacity=".18">
+            <line x1="200" y1="36" x2="200" y2="292"></line>
+            <line x1="325" y1="36" x2="325" y2="292"></line>
+            <line x1="450" y1="36" x2="450" y2="292"></line>
+            <line x1="575" y1="36" x2="575" y2="292"></line>
+            <line x1="700" y1="36" x2="700" y2="292"></line>
+          </g>
+          <rect x="200" y="16" width="12" height="12" fill="currentColor"></rect>
+          <text class="svgm" x="218" y="26" font-size="11.5" fill="currentColor" opacity=".75">최소</text>
+          <rect x="258" y="16" width="12" height="12" fill="currentColor" opacity=".3"></rect>
+          <text class="svgm" x="276" y="26" font-size="11.5" fill="currentColor" opacity=".75">최대</text>
+
+          <g font-size="14" fill="currentColor">
+            <text class="svgt" x="188" y="63" text-anchor="end">스파클링 와인</text>
+            <rect x="200" y="49" width="18" height="18" fill="currentColor"></rect>
+            <rect x="218" y="49" width="36" height="18" fill="currentColor" opacity=".3"></rect>
+            <text class="svgm" x="262" y="63" font-size="12" fill="currentColor">1~3일</text>
+
+            <text class="svgt" x="188" y="105" text-anchor="end">가벼운 화이트 &amp; 로제</text>
+            <rect x="200" y="91" width="89" height="18" fill="currentColor"></rect>
+            <rect x="289" y="91" width="36" height="18" fill="currentColor" opacity=".3"></rect>
+            <text class="svgm" x="333" y="105" font-size="12" fill="currentColor">5~7일</text>
+
+            <text class="svgt" x="188" y="147" text-anchor="end">풀 바디 화이트</text>
+            <rect x="200" y="133" width="54" height="18" fill="currentColor"></rect>
+            <rect x="254" y="133" width="35" height="18" fill="currentColor" opacity=".3"></rect>
+            <text class="svgm" x="297" y="147" font-size="12" fill="currentColor">3~5일</text>
+
+            <text class="svgt" x="188" y="189" text-anchor="end">레드 와인 (상온)</text>
+            <rect x="200" y="175" width="54" height="18" fill="currentColor"></rect>
+            <rect x="254" y="175" width="35" height="18" fill="currentColor" opacity=".3"></rect>
+            <text class="svgm" x="297" y="189" font-size="12" fill="currentColor">3~5일</text>
+
+            <text class="svgt" x="188" y="231" text-anchor="end">레드 와인 (냉장)</text>
+            <rect x="200" y="217" width="89" height="18" fill="currentColor"></rect>
+            <rect x="289" y="217" width="36" height="18" fill="currentColor" opacity=".3"></rect>
+            <text class="svgm" x="333" y="231" font-size="12" fill="currentColor">5~7일</text>
+
+            <text class="svgt" x="188" y="273" text-anchor="end">주정강화 와인</text>
+            <rect x="200" y="259" width="500" height="18" fill="var(--wine)"></rect>
+            <text class="svgm" x="708" y="273" font-size="12" fill="var(--wine)">28일</text>
+          </g>
+          <line x1="200" y1="292" x2="700" y2="292" stroke="currentColor" opacity=".5"></line>
+          <g class="svgm" font-size="12" fill="currentColor" text-anchor="middle" opacity=".75">
+            <text x="200" y="312">0</text>
+            <text x="325" y="312">7</text>
+            <text x="450" y="312">14</text>
+            <text x="575" y="312">21</text>
+            <text x="700" y="312">28</text>
+          </g>
+          <text class="svgm" x="716" y="312" font-size="12" fill="currentColor" opacity=".75">일</text>
+        </svg>
+      </div>
+      <figcaption>같은 레드라도 냉장 보관이 상온보다 이틀가량 더 버팁니다. 산화 속도가 온도에 비례하기 때문입니다. 도수가 높은 주정강화 와인은 한 달 가까이 견디는 예외입니다.</figcaption>
+    </figure>
+
+    <div class="tablewrap">
+      <table>
+        <caption>표 6-2. 와인 종류별 남은 와인 관리법</caption>
+        <thead><tr><th scope="col">와인 종류</th><th scope="col">보관 방법</th><th scope="col">최대 보관 기간</th><th scope="col">다시 마실 때 최적의 팁</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">스파클링 와인</th><td>스파클링 전용 스토퍼로 밀봉 후 냉장 보관</td><td class="num">1일 ~ 3일</td><td>냉장고에서 꺼내 바로 시음 (차갑게 유지)</td></tr>
+          <tr><th scope="row">가벼운 화이트 &amp; 로제</th><td>코르크 / 스토퍼로 밀봉 후 냉장 보관</td><td class="num">5일 ~ 7일</td><td>꺼내서 5분 정도 상온 방치 후 시음</td></tr>
+          <tr><th scope="row">풀 바디 화이트 와인</th><td>코르크 / 스토퍼로 밀봉 후 냉장 보관</td><td class="num">3일 ~ 5일</td><td>꺼내서 5~10분 정도 상온 방치 후 시음</td></tr>
+          <tr><th scope="row">레드 와인 (상온)</th><td>밀봉 후 서늘하고 어두운 곳 보관</td><td class="num">3일 ~ 5일</td><td>개봉 후 바로 시음 가능</td></tr>
+          <tr><th scope="row">레드 와인 (냉장)</th><td>밀봉 후 냉장고 보관 (산화 지연 효과)</td><td class="num">5일 ~ 7일</td><td>마시기 20분 전에 꺼내 상온에 둔 뒤 시음</td></tr>
+          <tr><th scope="row">주정강화 와인</th><td>밀봉 후 서늘하고 어두운 곳 보관</td><td class="num">최대 28일</td><td>도수가 높아 산화에 매우 강함</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= 7장 ================= -->
+  <section id="ch7">
+    <span class="chno">7장</span>
+    <h2 class="ch">실패 없이 첫 와인 고르는 법</h2>
+    <p class="dek">"비싸면 더 맛있겠지"는 반은 맞고 반은 틀립니다. 가격이 일정 구간을 넘어서면 맛의 차이보다 희소성과 브랜드의 값이 더 커지기 때문입니다. 얼마를 쓸지보다, 무엇을 확인할지가 실패를 줄입니다.</p>
+
+    <h3>가격과 맛은 끝까지 비례하지 않는다</h3>
+    <div class="prose">
+      <p>와인 가격을 밀어 올리는 것은 맛만이 아닙니다. 포도밭의 명성, 생산량의 희소성, 유통 단계마다 붙는 마진이 함께 쌓입니다. 그래서 체감 품질은 어느 가격대를 지나면 완만해지고, 그 뒤로 더 내는 돈은 점점 더 ‘맛이 아닌 것’을 사는 셈이 됩니다.</p>
+    </div>
+
+    <figure>
+      <div class="figframe">
+        <svg viewBox="0 0 740 300" role="img" aria-label="가격이 오를수록 체감 품질은 처음엔 가파르게 오르지만 일정 구간을 지나면 완만해지며, 이 가이드가 추천한 세 와인은 모두 그 꺾이는 지점 근처 스위트 스팟에 위치한다">
+          <defs>
+            <marker id="ar6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <polygon points="0,1 10,5 0,9" fill="currentColor"></polygon>
+            </marker>
+          </defs>
+          <!-- 스위트 스팟 음영 -->
+          <rect x="178" y="40" width="130" height="208" fill="var(--wine-tint)"></rect>
+          <text class="svgb" x="243" y="34" font-size="12.5" text-anchor="middle" fill="var(--wine)">스위트 스팟</text>
+
+          <!-- 축 -->
+          <line x1="60" y1="248" x2="700" y2="248" stroke="currentColor" opacity=".55" marker-end="url(#ar6)"></line>
+          <line x1="60" y1="248" x2="60" y2="30" stroke="currentColor" opacity=".55" marker-end="url(#ar6)"></line>
+          <text class="svgm" x="66" y="42" font-size="11.5" fill="currentColor" opacity=".7">체감 품질 · 만족도</text>
+          <text class="svgm" x="694" y="268" font-size="11.5" text-anchor="end" fill="currentColor" opacity=".7">가격</text>
+
+          <!-- 곡선 -->
+          <path d="M60,250 C130,170 165,100 230,80 C320,58 480,50 700,46" fill="none" stroke="currentColor" stroke-width="1.6"></path>
+
+          <!-- 가격 눈금 -->
+          <g stroke="currentColor" opacity=".45">
+            <line x1="60" y1="244" x2="60" y2="252"></line>
+            <line x1="178" y1="244" x2="178" y2="252"></line>
+            <line x1="308" y1="244" x2="308" y2="252"></line>
+            <line x1="430" y1="244" x2="430" y2="252"></line>
+            <line x1="580" y1="244" x2="580" y2="252"></line>
+            <line x1="700" y1="244" x2="700" y2="252"></line>
+          </g>
+          <g class="svgm" font-size="11.5" fill="currentColor" opacity=".7" text-anchor="middle">
+            <text x="60" y="268">$0</text>
+            <text x="178" y="268">$15</text>
+            <text x="308" y="268">$40</text>
+            <text x="430" y="268">$70</text>
+            <text x="580" y="268">$100</text>
+            <text x="700" y="268">$150+</text>
+          </g>
+
+          <!-- 추천 와인 3종 위치 -->
+          <circle cx="206" cy="92" r="5.5" fill="var(--wine)"></circle>
+          <text class="svgt" x="206" y="76" font-size="11.5" text-anchor="middle" fill="currentColor">쿠바제 ($20대)</text>
+          <circle cx="278" cy="66" r="5.5" fill="var(--wine)"></circle>
+          <text class="svgt" x="278" y="112" font-size="11.5" text-anchor="middle" fill="currentColor">상세르 루즈</text>
+          <text class="svgt" x="278" y="126" font-size="11.5" text-anchor="middle" fill="currentColor">샤블리 ($30~40대)</text>
+          <line x1="278" y1="76" x2="278" y2="96" stroke="currentColor" opacity=".4"></line>
+
+          <!-- 고가 참조점 -->
+          <circle cx="660" cy="48" r="5" fill="none" stroke="currentColor" stroke-width="1.3"></circle>
+          <text class="svgt" x="660" y="32" font-size="11.5" text-anchor="middle" fill="currentColor" opacity=".8">$150+ 희귀 컬렉터 와인</text>
+          <text class="svgt" x="598" y="290" font-size="11" fill="currentColor" opacity=".6">맛의 차이보다 희소성 · 브랜드 값이 큰 구간</text>
+        </svg>
+      </div>
+      <figcaption>곡선이 가파른 구간(대략 US$0~25)에서는 1달러를 더 쓸 때마다 맛의 차이가 뚜렷합니다. 하지만 구간을 지나 완만해지면, 추가 지출은 희소성·명성 쪽으로 더 많이 흘러갑니다. 5장의 추천 와인 3종은 모두 이 꺾이는 지점 — 가격 대비 만족도가 가장 높은 구간에 있습니다.</figcaption>
+    </figure>
+
+    <h3>실패 확률을 낮추는 체크리스트</h3>
+    <p class="dek">값을 많이 쓰는 대신, 아래 여섯 가지만 훑어보세요. 순서대로 확인할수록 실패 확률이 줄어듭니다.</p>
+    <ol class="checklist">
+      <li><b>빈티지부터 본다</b><span>화이트 · 로제 · 스파클링은 신선함이 생명이라 수확 후 1~3년 이내가 안전합니다. 레드는 품종에 따라 다르지만, 입문 단계에서는 역시 너무 오래된 빈티지보다 최근 1~5년 사이를 고르는 편이 무난합니다.</span></li>
+      <li><b>등급 · 원산지 표기를 확인한다</b><span>3장에서 본 것처럼 구대륙은 지역명이 곧 품질 규정입니다. 프랑스라면 AOC(원산지 통제 명칭)가 IGP나 Vin de France보다 수확량 · 양조 규정이 엄격합니다. 신대륙은 포도밭 이름이 구체적일수록(단일 포도원 등) 대체로 더 정성 들인 와인입니다.</span></li>
+      <li><b>내 입맛의 축을 안다</b><span>2장의 다섯 축을 떠올려 보세요. 산도 높은 상쾌함이 좋다면 리슬링 · 소비뇽 블랑, 탄닌의 떫은맛이 부담스럽다면 피노 누아 · 메를로처럼 부드러운 품종을 고르면 실패할 확률이 크게 줄어듭니다.</span></li>
+      <li><b>평점은 참고만, 맹신은 금물</b><span>Vivino 평균 3.5점 이상, 전문지(Decanter · Wine Spectator 등) 88점 이상이면 무난한 품질의 기준선으로 볼 만합니다. 다만 평점은 평가자의 입맛을 반영할 뿐, 내 입맛과 같다는 보장은 없습니다.</span></li>
+      <li><b>진열 상태를 살핀다</b><span>6장에서 본 적정 보관 온도(12~15°C)를 기억하세요. 매장 조명 아래 직사광선을 오래 받았거나, 코르크 윗부분이 마르고 라벨이 바랜 병은 피하는 편이 안전합니다.</span></li>
+      <li><b>모르겠으면 직원에게 묻는다</b><span>"이 가격대에서 가장 잘 나가는 걸로 주세요", "오늘 먹을 음식에 어울리는 걸로 추천해 주세요" — 이 두 질문만으로도 혼자 라벨을 해독하는 것보다 실패 확률이 낮아집니다.</span></li>
+    </ol>
+
+    <h3>가격대별로 기대할 수 있는 것</h3>
+    <div class="tablewrap">
+      <table>
+        <caption>표 7-1. 가격대별 기대치와 확인할 점</caption>
+        <thead>
+          <tr><th scope="col">가격대</th><th scope="col">무엇을 기대할 수 있나</th><th scope="col">확인할 점</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">US$10 이하</th>
+            <td>대량 생산된 벌크 와인. 가볍고 무난하지만 개성은 적은 편</td>
+            <td>빈티지 · 생산자 표기가 부실한 경우가 많음</td>
+          </tr>
+          <tr>
+            <th scope="row">US$15 ~ 25</th>
+            <td>데일리 와인의 스위트 스팟. 유명 생산자의 엔트리급도 이 구간에 많음</td>
+            <td>5장의 쿠바제 블랑 드 블랑이 이 구간(US$20대 초반)</td>
+          </tr>
+          <tr>
+            <th scope="row">US$25 ~ 50</th>
+            <td>단일 포도원 · 빌리지 등급. 품질 편차가 눈에 띄게 줄어드는 구간</td>
+            <td>5장의 고뜨홍 샤블리 · 상세르 루즈가 이 구간(US$30~40대)</td>
+          </tr>
+          <tr>
+            <th scope="row">US$50 이상</th>
+            <td>희소성과 명성, 장기 숙성 잠재력</td>
+            <td>가격 상승분의 상당 부분이 ‘맛’ 외의 요소(브랜드 · 생산량)에서 옴</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note"><b>요약</b> — "비쌀수록 좋다"가 아니라 "체크리스트를 거치면 실패하지 않는다"가 맞습니다. 5장의 쿠바제 블랑 드 블랑, 고뜨홍 샤블리, 상세르 루즈는 모두 US$20~40대 — 가격 대비 만족도가 가장 높은 구간에서, 위 체크리스트를 통과한 예시로 골랐습니다.</div>
+  </section>
+
+  <!-- ================= 부록 ================= -->
+  <section id="appendix">
+    <span class="chno">부록</span>
+    <h2 class="ch">나만의 시음 기록지</h2>
+    <p class="dek">와인을 마실 때마다 아래 양식을 채워 보세요. 처음 한두 번은 뭘 적어야 할지 막막할 수 있지만, 열 병이면 취향의 윤곽이, 서른 병이면 다음에 살 와인이 보입니다. 이 페이지에서 바로 입력할 수 있고, 그대로 복사해 노션이나 수첩에 옮겨 적어도 됩니다.</p>
+
+    <div class="tastingexample">
+      <span class="extag">작성 예시 — 이렇게 채우면 됩니다</span>
+      <h4>고뜨홍 샤블리 2021 (5장 추천 와인 참고)</h4>
+      <dl>
+        <div><dt>📅 시음 날짜</dt><dd>2026년 3월 14일</dd></div>
+        <div><dt>🍷 와인 이름 / 빈티지</dt><dd>고뜨홍 샤블리 2021</dd></div>
+        <div><dt>🌍 생산 국가 / 지역</dt><dd>프랑스 › 부르고뉴 › 샤블리</dd></div>
+        <div><dt>🍇 포도 품종</dt><dd>샤르도네 100%</dd></div>
+        <div><dt>💰 구매처 / 가격</dt><dd>OO와인샵, 42,000원</dd></div>
+        <div><dt>👀 외관</dt><dd>연한 금빛, 테두리에 살짝 감도는 초록빛</dd></div>
+        <div><dt>👃 향</dt><dd>풋사과, 젖은 돌, 흰 꽃</dd></div>
+        <div>
+          <dt>👅 맛의 밸런스</dt>
+          <dd class="exrate">
+            <span>바디 <span class="pips" role="img" aria-label="5점 중 2점"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span>
+            <span>탄산 <span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+            <span>당도 <span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+            <span>산도 <span class="pips" role="img" aria-label="5점 중 5점"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></span>
+            <span>탄닌 <span class="pips" role="img" aria-label="5점 중 1점"><i class="on"></i><i></i><i></i><i></i><i></i></span></span>
+          </dd>
+        </div>
+        <div><dt>🍽️ 음식 궁합</dt><dd>석화(생굴) — 짭짤한 미네랄끼리 잘 어울림</dd></div>
+        <div><dt>⭐ 총평</dt><dd>산도가 또렷해서 입문자에게도 추천. 다음엔 1er Cru 등급도 마셔보고 싶음</dd></div>
+      </dl>
+    </div>
+
+    <form class="journal" onsubmit="return false">
+      <div><label class="k" for="j-date">📅 시음 날짜</label><input type="text" id="j-date" name="j-date" placeholder="2026년 __월 __일"></div>
+      <div><label class="k" for="j-name">🍷 와인 이름 / 빈티지</label><input type="text" id="j-name" name="j-name" placeholder="예 : 고뜨홍 샤블리 2021"></div>
+      <div><label class="k" for="j-origin">🌍 생산 국가 / 지역</label><input type="text" id="j-origin" name="j-origin" placeholder="예 : 프랑스 › 부르고뉴 › 샤블리"></div>
+      <div><label class="k" for="j-grape">🍇 포도 품종<span class="fieldhint">모르면 3장처럼 지역명으로 유추해 적어도 좋습니다</span></label><input type="text" id="j-grape" name="j-grape" placeholder="예 : 샤르도네 100%"></div>
+      <div><label class="k" for="j-shop">💰 구매처 / 가격</label><input type="text" id="j-shop" name="j-shop" placeholder="예 : OO와인샵, 42,000원"></div>
+      <div><label class="k" for="j-look">👀 외관 (색상 및 투명도)<span class="fieldhint">4장 1단계처럼 잔을 45° 기울여 테두리 색까지 봅니다</span></label><input type="text" id="j-look" name="j-look" placeholder="예 : 연한 금빛, 테두리에 초록빛"></div>
+      <div><label class="k" for="j-nose">👃 향 (가장 강한 아로마 3가지)<span class="fieldhint">정답은 없습니다. 떠오르는 대로 적어 보세요</span></label><input type="text" id="j-nose" name="j-nose" placeholder="예 : 풋사과, 젖은 돌, 흰 꽃"></div>
+      <div>
+        <span class="k">👅 맛의 밸런스 (5점)<span class="fieldhint">2장의 다섯 축을 그대로 적용합니다 — 왼쪽 1점이 가장 약함, 오른쪽 5점이 가장 강함</span></span>
+        <div class="rate">
+          <fieldset><legend>바디</legend>
+            <input type="checkbox" id="j-body-1" aria-label="바디 1점"><input type="checkbox" id="j-body-2" aria-label="바디 2점"><input type="checkbox" id="j-body-3" aria-label="바디 3점"><input type="checkbox" id="j-body-4" aria-label="바디 4점"><input type="checkbox" id="j-body-5" aria-label="바디 5점">
+          </fieldset>
+          <fieldset><legend>탄산</legend>
+            <input type="checkbox" id="j-fizz-1" aria-label="탄산 1점"><input type="checkbox" id="j-fizz-2" aria-label="탄산 2점"><input type="checkbox" id="j-fizz-3" aria-label="탄산 3점"><input type="checkbox" id="j-fizz-4" aria-label="탄산 4점"><input type="checkbox" id="j-fizz-5" aria-label="탄산 5점">
+          </fieldset>
+          <fieldset><legend>당도</legend>
+            <input type="checkbox" id="j-sweet-1" aria-label="당도 1점"><input type="checkbox" id="j-sweet-2" aria-label="당도 2점"><input type="checkbox" id="j-sweet-3" aria-label="당도 3점"><input type="checkbox" id="j-sweet-4" aria-label="당도 4점"><input type="checkbox" id="j-sweet-5" aria-label="당도 5점">
+          </fieldset>
+          <fieldset><legend>산도</legend>
+            <input type="checkbox" id="j-acid-1" aria-label="산도 1점"><input type="checkbox" id="j-acid-2" aria-label="산도 2점"><input type="checkbox" id="j-acid-3" aria-label="산도 3점"><input type="checkbox" id="j-acid-4" aria-label="산도 4점"><input type="checkbox" id="j-acid-5" aria-label="산도 5점">
+          </fieldset>
+          <fieldset><legend>탄닌</legend>
+            <input type="checkbox" id="j-tan-1" aria-label="탄닌 1점"><input type="checkbox" id="j-tan-2" aria-label="탄닌 2점"><input type="checkbox" id="j-tan-3" aria-label="탄닌 3점"><input type="checkbox" id="j-tan-4" aria-label="탄닌 4점"><input type="checkbox" id="j-tan-5" aria-label="탄닌 5점">
+          </fieldset>
+        </div>
+      </div>
+      <div><label class="k" for="j-food">🍽️ 함께 먹은 음식과 궁합</label><input type="text" id="j-food" name="j-food" placeholder="예 : 스테이크, 탄닌이 부드러워져서 잘 맞음"></div>
+      <div><label class="k" for="j-verdict">⭐ 총평 및 재구매 의사</label><input type="text" id="j-verdict" name="j-verdict" placeholder="예 : 다음에 또 사고 싶다 / 다른 빈티지도 궁금하다"></div>
+    </form>
+    <div class="note"><b>기록할 때의 요령</b> — 향은 정답을 맞히는 문제가 아닙니다. ‘블랙커런트’가 떠오르지 않으면 ‘어릴 때 먹던 과일 젤리’라고 적어도 좋습니다. 중요한 것은 다음에 같은 향을 다시 알아보는 일입니다. 처음 몇 병은 다섯 축 점수를 매기기 어려울 수 있는데, 그럴 땐 위 예시와 비교해 ‘이것보다 산도가 센지 약한지’만 가늠해도 충분합니다.</div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>원본 자료 제공 : 와인전문 바틀샵 피에스타 · 웹 문서용 재구성</p>
+    <p>본 문서는 와인 입문자를 위한 학습용 가이드이며, 표기된 평점과 가격 정보는 작성 시점 기준입니다.</p>
+    <p>청포도(샤르도네) 사진 : Berndt Fernow, “Chardonnay Avize” (Wikimedia Commons, CC BY-SA 3.0)</p>
+  </div>
+</footer>
